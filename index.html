@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BABS 2026 — Option D Website Mockups</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #F7F7F7;
+    color: #111;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: #111;
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .header h1 span { color: #E31B23; }
+  .header p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .grid {
+    max-width: 1100px;
+    margin: -40px auto 60px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    padding: 40px;
+    position: relative;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .card:hover {
+    border-color: #E31B23;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+
+  .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #E31B23;
+    margin-bottom: 12px;
+  }
+
+  .card h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .card-cta {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #E31B23;
+  }
+
+  .card-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid #E0E0E0;
+    color: #999;
+  }
+  .card-tag.dark { background: #111; color: #fff; border-color: #111; }
+  .card-tag.light { background: #fff; color: #111; border-color: #E0E0E0; }
+  .card-tag.original { background: #E31B23; color: #fff; border-color: #E31B23; }
+
+  .footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; padding: 0 20px; }
+    .header { padding: 40px 20px; }
+    .header h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BABS 2026 <span>Option D</span> Mockups</h1>
+  <p>Four versions of the "Champions Don't Play Safe" website direction. Same DNA, different executions.</p>
+</div>
+
+<div class="grid">
+  <a href="original-d.html" class="card">
+    <span class="card-tag original">Original</span>
+    <div class="card-label">Version 1 — Original Option D</div>
+    <h2>The Starting Point</h2>
+    <p>The original Option D mockup — "Champions Don't Play Safe" hero, full Anti-Everything grid, Champions Code right after proof bar. The version that prompted the first round of client feedback.</p>
+    <div class="card-cta">View Original &rarr;</div>
+  </a>
+
+  <a href="v1-revised.html" class="card">
+    <span class="card-tag dark">Dark</span>
+    <div class="card-label">Version 1 Revised — First Revision</div>
+    <h2>The Overcorrection</h2>
+    <p>First attempt at addressing feedback — swapped hero to "Real Business Gets Done Here," added value sections, reduced anti-positioning. Client said this overcorrected by removing the Champions theme.</p>
+    <div class="card-cta">View V1 Revised &rarr;</div>
+  </a>
+
+  <a href="v2-dark.html" class="card">
+    <span class="card-tag dark">Dark</span>
+    <div class="card-label">Version 2 — Dark Design</div>
+    <h2>Champions + Value-First</h2>
+    <p>"Champions Don't Play Safe" restored as hero. Value leads the page. Code repositioned as the quality guarantee — "the room where champions grow their business, and by the way, we have a code." Dark design.</p>
+    <div class="card-cta">View V2 Dark &rarr;</div>
+  </a>
+
+  <a href="v2-alt-light.html" class="card">
+    <span class="card-tag light">Light</span>
+    <div class="card-label">Version 2 Alt — Light Editorial Design</div>
+    <h2>Same Story, Different Feel</h2>
+    <p>Same V2 copy direction but hero is 100% value-driven (no Code mention above the fold). Light, editorial, magazine-feel design. Code section goes dark as a visual reveal — "Oh, and one more thing."</p>
+    <div class="card-cta">View V2 Alt Light &rarr;</div>
+  </a>
+</div>
+
+<div class="footer">
+  BABS 2026 OPTION D MOCKUPS &mdash; PREPARED BY YORCMO &mdash; MARCH 2026
+</div>
+
+</body>
+</html>

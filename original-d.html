@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Badass Business Summit | Champions Don't Play Safe</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --champion-red: #E31B23;
+    --command-black: #0A0A0A;
+    --deep-black: #111111;
+    --carbon: #1A1A1A;
+    --steel: #2A2A2A;
+    --smoke: #8A8A8A;
+    --chalk: #F5F5F5;
+    --white: #FFFFFF;
+    --gold: #D4A843;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--command-black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ========== NAVIGATION ========== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 0 40px;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; font-size: 22px; letter-spacing: 1px;
+    color: var(--white);
+  }
+  .nav-logo span { color: var(--champion-red); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    color: var(--smoke); text-decoration: none;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.5px;
+    text-transform: uppercase; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--champion-red) !important;
+    color: var(--white) !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    letter-spacing: 1px;
+    border: none; cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: #c71620 !important; transform: translateY(-1px); }
+
+  /* ========== HERO SECTION ========== */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    background: linear-gradient(180deg, var(--command-black) 0%, var(--deep-black) 100%);
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(227,27,35,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--champion-red);
+    border: 1px solid rgba(227,27,35,0.3);
+    padding: 8px 20px;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    max-width: 900px;
+  }
+  .hero h1 .accent { color: var(--champion-red); }
+  .hero-sub {
+    font-size: 18px; color: var(--smoke);
+    max-width: 600px; margin-bottom: 16px;
+    line-height: 1.7;
+  }
+  .hero-details {
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--chalk);
+    margin: 24px 0 40px;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-details span { color: var(--champion-red); margin: 0 12px; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--champion-red);
+    color: var(--white);
+    padding: 16px 48px;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #c71620; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(227,27,35,0.3); }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    padding: 16px 48px;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.3s;
+    margin-left: 16px;
+  }
+  .btn-outline:hover { border-color: var(--white); }
+
+  /* ========== PROOF BAR ========== */
+  .proof-bar {
+    background: var(--deep-black);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 48px 40px;
+    display: flex; justify-content: center;
+    gap: 80px; flex-wrap: wrap;
+  }
+  .proof-stat { text-align: center; }
+  .proof-stat .number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px; font-weight: 700; color: var(--champion-red);
+    line-height: 1;
+  }
+  .proof-stat .label {
+    font-size: 13px; color: var(--smoke);
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* ========== SECTION STYLES ========== */
+  section { padding: 100px 40px; }
+  .section-dark { background: var(--command-black); }
+  .section-carbon { background: var(--carbon); }
+  .section-deep { background: var(--deep-black); }
+  .section-red { background: var(--champion-red); }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--champion-red);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700; line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .section-desc {
+    font-size: 17px; color: var(--smoke);
+    max-width: 650px; line-height: 1.8;
+  }
+
+  /* ========== CHAMPIONS CODE ========== */
+  .code-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .code-card {
+    background: var(--carbon);
+    padding: 40px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .code-card:hover {
+    background: var(--steel);
+  }
+  .code-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px; font-weight: 700;
+    color: rgba(227,27,35,0.15);
+    line-height: 1;
+    position: absolute; top: 20px; right: 24px;
+  }
+  .code-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px; font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .code-card p {
+    font-size: 15px; color: var(--smoke);
+    line-height: 1.7;
+    position: relative;
+  }
+
+  /* ========== ANTI-EVERYTHING ========== */
+  .anti-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .anti-card {
+    padding: 48px 36px;
+    text-align: center;
+  }
+  .anti-card .anti-label {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--champion-red);
+    margin-bottom: 12px;
+  }
+  .anti-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px; font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .anti-card p {
+    font-size: 14px; color: var(--smoke);
+    line-height: 1.7;
+  }
+
+  /* ========== WHAT YOU GET ========== */
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .exp-card {
+    background: var(--carbon);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 40px;
+    transition: all 0.3s;
+  }
+  .exp-card:hover {
+    border-color: rgba(227,27,35,0.2);
+    transform: translateY(-4px);
+  }
+  .exp-icon {
+    width: 48px; height: 48px;
+    background: rgba(227,27,35,0.1);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    font-size: 22px;
+  }
+  .exp-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px; font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .exp-card p {
+    font-size: 14px; color: var(--smoke); line-height: 1.7;
+  }
+
+  /* ========== TESTIMONIALS ========== */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .testimonial-card {
+    background: var(--carbon);
+    border-left: 3px solid var(--champion-red);
+    padding: 36px;
+  }
+  .testimonial-card blockquote {
+    font-size: 16px; font-style: italic;
+    line-height: 1.8; color: var(--chalk);
+    margin-bottom: 20px;
+  }
+  .testimonial-card cite {
+    font-size: 13px; color: var(--smoke);
+    font-style: normal; font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .testimonial-code {
+    display: inline-block;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--champion-red);
+    margin-top: 8px;
+  }
+
+  /* ========== PRICING ========== */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto; margin-right: auto;
+  }
+  .price-card {
+    background: var(--carbon);
+    padding: 48px;
+    text-align: center;
+    position: relative;
+  }
+  .price-card.featured {
+    background: var(--steel);
+    border: 2px solid var(--champion-red);
+  }
+  .price-card.featured::before {
+    content: 'INNER CIRCLE';
+    position: absolute; top: 0; left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--champion-red);
+    padding: 6px 20px;
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+  .price-tier {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--smoke);
+    margin-bottom: 8px;
+  }
+  .price-amount {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px; font-weight: 700;
+    color: var(--champion-red);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-term {
+    font-size: 13px; color: var(--smoke);
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .price-features {
+    list-style: none; text-align: left;
+    margin-bottom: 36px;
+  }
+  .price-features li {
+    font-size: 14px; color: var(--chalk);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .price-features li::before {
+    content: ''; display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--champion-red);
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+  .price-card .btn-primary { width: 100%; text-align: center; padding: 16px; }
+
+  /* ========== COUNTDOWN / URGENCY ========== */
+  .urgency-strip {
+    background: var(--champion-red);
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .urgency-strip h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .urgency-strip p {
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 32px;
+    opacity: 0.9;
+    line-height: 1.7;
+  }
+  .urgency-strip .btn-primary {
+    background: var(--command-black);
+    color: var(--white);
+  }
+  .urgency-strip .btn-primary:hover {
+    background: var(--deep-black);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+
+  /* ========== SPONSORS ========== */
+  .sponsor-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .sponsor-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--smoke);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  .sponsor-logo:hover { opacity: 1; }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--command-black);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--champion-red); }
+  .footer-tagline {
+    font-size: 12px; letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--smoke);
+    margin-bottom: 32px;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: var(--smoke);
+    text-decoration: none;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy {
+    font-size: 12px; color: rgba(255,255,255,0.2);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 60px 20px; }
+    .proof-bar { gap: 40px; padding: 32px 20px; }
+    .anti-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
+    .hero { padding: 100px 20px 60px; }
+    .btn-outline { margin-left: 0; margin-top: 12px; }
+  }
+
+  /* ========== CRITIQUE BANNER ========== */
+  .critique-banner {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid rgba(212,168,67,0.3);
+    padding: 60px 40px;
+    margin: 72px 0 0;
+    text-align: center;
+  }
+  .critique-banner h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .critique-banner p {
+    font-size: 14px;
+    color: var(--smoke);
+  }
+
+  /* ========== CRITIQUE SECTION ========== */
+  .critique-section {
+    background: var(--deep-black);
+    padding: 60px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .critique-container { max-width: 900px; margin: 0 auto; }
+  .critique-category {
+    margin-bottom: 48px;
+  }
+  .critique-category:last-child { margin-bottom: 0; }
+  .critique-category h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px; font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--champion-red);
+    display: inline-block;
+  }
+  .critique-category h3.green { border-color: #2ecc71; }
+  .critique-category h3.red { border-color: #e74c3c; }
+  .critique-category h3.amber { border-color: var(--gold); }
+  .critique-item {
+    background: var(--carbon);
+    padding: 24px;
+    margin-bottom: 12px;
+    border-left: 3px solid var(--smoke);
+  }
+  .critique-item.positive { border-left-color: #2ecc71; }
+  .critique-item.negative { border-left-color: #e74c3c; }
+  .critique-item.improvement { border-left-color: var(--gold); }
+  .critique-item h4 {
+    font-size: 15px; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .critique-item p {
+    font-size: 14px; color: var(--smoke);
+    line-height: 1.7;
+  }
+
+  .divider-label {
+    text-align: center;
+    padding: 80px 40px 20px;
+    background: var(--command-black);
+  }
+  .divider-label h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px; font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .divider-label p {
+    font-size: 14px; color: var(--smoke); margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ====================================================================
+     PART 1: PROFESSIONAL WEBSITE CRITIQUE
+     ==================================================================== -->
+
+<div class="critique-banner">
+  <h2>Professional Event Website Audit</h2>
+  <p>Badass Business Summit &mdash; badassbusinesssummit.com &mdash; Reviewed March 2026 by yorCMO</p>
+</div>
+
+<div class="critique-section">
+  <div class="critique-container">
+
+    <div class="critique-category">
+      <h3 class="green">What Works</h3>
+
+      <div class="critique-item positive">
+        <h4>Strong Brand Identity &amp; Unapologetic Voice</h4>
+        <p>The BABs brand voice is immediately distinct. Within seconds, a visitor knows this isn't a generic conference. The name itself is a qualifying filter &mdash; people who are put off by it were never the right buyer. This is a genuine competitive advantage that most event brands spend years trying to manufacture.</p>
+      </div>
+
+      <div class="critique-item positive">
+        <h4>Clear Date, Location &amp; CTA Above the Fold</h4>
+        <p>The hero section gets the essentials right: September 16&ndash;18, Fort Worth, TX, and a Buy Your Ticket button. Visitors don't have to scroll to find the basics. This alone puts BABS ahead of 40% of event websites that bury critical logistics.</p>
+      </div>
+
+      <div class="critique-item positive">
+        <h4>Two-Tier Pricing is Smart</h4>
+        <p>GA at $597 and VIP at $1,097 with clearly differentiated value (mastermind lunches, speaker showdown access, post-event check-in) is solid event pricing architecture. The VIP tier creates both an upsell path and a scarcity lever.</p>
+      </div>
+
+      <div class="critique-item positive">
+        <h4>Sponsor Visibility</h4>
+        <p>Diamond sponsors are prominently placed. The "Become a Sponsor" CTA with a clear value prop ("put your brand in front of Badass business owners across the country") serves the dual purpose of driving sponsor revenue and signaling credibility to attendees.</p>
+      </div>
+
+      <div class="critique-item positive">
+        <h4>The Countdown Timer Creates Urgency</h4>
+        <p>A countdown to the event date is a proven conversion driver. It shifts the visitor's mindset from "I'll think about it" to "time is running out." This is event marketing 101, and it's good to see it deployed.</p>
+      </div>
+    </div>
+
+    <div class="critique-category">
+      <h3 class="red">What Doesn't Work</h3>
+
+      <div class="critique-item negative">
+        <h4>The Hero Section Wastes 70% of the Most Valuable Real Estate on the Internet</h4>
+        <p>The current hero is mostly empty black space with a headline ("Stop Playing in Business") and a button. There's no value proposition. No proof. No emotional hook beyond attitude. A first-time visitor who doesn't know BABS has zero reason to keep scrolling. Best-selling events use the hero to answer three questions in 5 seconds: What is this? Why should I care? What do I do next? Right now, BABS only answers the third.</p>
+      </div>
+
+      <div class="critique-item negative">
+        <h4>Zero Social Proof Above the Fold</h4>
+        <p>85% Excellent ratings. 83% word-of-mouth discovery. 7th annual event. None of these appear until deep in the page &mdash; and some don't appear at all. Events that consistently sell out lead with proof because the #1 objection for any event is "Is this worth my time and money?" The current site makes visitors take that on faith.</p>
+      </div>
+
+      <div class="critique-item negative">
+        <h4>No Speaker Section, Schedule, or Content Preview</h4>
+        <p>The single biggest driver of event ticket sales (after social proof) is knowing who's on stage and what you'll learn. The current homepage has zero speaker information, zero session previews, and zero agenda structure. A visitor considering $597&ndash;$1,097 has no way to evaluate the content quality without leaving the site.</p>
+      </div>
+
+      <div class="critique-item negative">
+        <h4>The "Network Without the Bullshit" Section Has No Substance</h4>
+        <p>This section makes a bold claim but provides no specifics. How is the networking structured? What formats are used? What makes it different from any other event's networking? Best-selling events describe their networking format in concrete terms: roundtable matching, curated 1:1 meetings, industry-specific breakouts. BABS says "skip the small talk" but doesn't explain what replaces it.</p>
+      </div>
+
+      <div class="critique-item negative">
+        <h4>The Page Structure Kills Conversion Flow</h4>
+        <p>The current page goes: Hero &rarr; Countdown &rarr; Brief copy &rarr; Networking blurb &rarr; Sponsors &rarr; Pricing &rarr; More sponsors &rarr; Footer. There's no storytelling arc. No problem-agitation-solution. No objection handling. No testimonials. No "who is this for" section. The page reads like a brochure, not a sales page. Sell-out events structure their pages as persuasion sequences, not information dumps.</p>
+      </div>
+
+      <div class="critique-item negative">
+        <h4>No Testimonials or Attendee Voices Anywhere on the Page</h4>
+        <p>This is the most critical miss. BABS has 26 verified survey responses with quotes like attendees praising the atmosphere and actionable content. None of these appear on the website. In a world where 83% of your attendees come from word of mouth, the website should BE word of mouth &mdash; filled with real voices from real operators who've been in the room.</p>
+      </div>
+
+      <div class="critique-item negative">
+        <h4>VIP Value Prop is Buried and Under-Sold</h4>
+        <p>The VIP tier includes a 45-day post-event accountability check-in, application to Speaker Showdown, and mastermind lunches with speakers. These are genuinely differentiated benefits. But they're listed in plain text on a pricing card with no framing, no story, and no urgency. The VIP section needs its own narrative: "This is for operators who don't just want access &mdash; they want accountability."</p>
+      </div>
+
+      <div class="critique-item negative">
+        <h4>Copyright Shows 2025 &mdash; Signals Neglect</h4>
+        <p>Small detail, big signal. A site that says "&copy; 2025" in March 2026 tells visitors the site isn't actively maintained. For a $597+ purchase, this erodes trust.</p>
+      </div>
+    </div>
+
+    <div class="critique-category">
+      <h3 class="amber">What Needs Improvement</h3>
+
+      <div class="critique-item improvement">
+        <h4>Needs a Belief System, Not Just an Attitude</h4>
+        <p>The current site has edge, but edge without a framework is just noise. Option D's Champions Code gives BABS something no other event has: a proprietary belief system that qualifies the room. Six rules that tell prospects "if this sounds like you, you belong here." This transforms the brand from "aggressive conference" to "a community with a code." That's the difference between a one-time event and a movement.</p>
+      </div>
+
+      <div class="critique-item improvement">
+        <h4>Add a "Who This Is For / Who This Isn't For" Section</h4>
+        <p>The best-selling events in every category use exclusion as a sales tool. Telling people who shouldn't come makes the people who should come feel seen. BABS is perfectly positioned for this: "Not corporate. Not woo-woo. Not bro-culture. Something else entirely."</p>
+      </div>
+
+      <div class="critique-item improvement">
+        <h4>Restructure as a Persuasion Sequence</h4>
+        <p>The page should follow a proven conversion flow: Hook (hero with proof) &rarr; Qualify (who is this for) &rarr; Differentiate (what makes this different) &rarr; Prove (testimonials + stats) &rarr; Show (what you'll experience) &rarr; Price (with framing) &rarr; Close (urgency + final CTA). Every section should answer the objection the visitor is thinking at that scroll depth.</p>
+      </div>
+
+      <div class="critique-item improvement">
+        <h4>Mobile Experience Needs Attention</h4>
+        <p>Over 60% of event ticket research happens on mobile. The current site's large empty spaces, oversized text blocks, and lack of thumb-friendly navigation hurt conversion on smaller screens. The mock below addresses this with responsive design and touch-optimized CTAs.</p>
+      </div>
+
+      <div class="critique-item improvement">
+        <h4>Needs a Video or Visual Proof Element</h4>
+        <p>Video testimonials exist in the BABS Testimonials folder. A 60-second highlight reel or even a single attendee video testimonial in the hero section would dramatically increase conversion. Events with video on the landing page see 20&ndash;40% higher conversion rates vs. text-only pages.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================================
+     PART 2: MOCKUP DIVIDER
+     ==================================================================== -->
+
+<div class="divider-label">
+  <h2>Option D Mock Website</h2>
+  <p>The Champions Code &mdash; redesigned for conversion using real data and the Option D messaging direction</p>
+</div>
+
+<!-- ====================================================================
+     PART 2: OPTION D MOCK WEBSITE
+     ==================================================================== -->
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">BAD<span>A</span>SS BUSINESS SUMMIT</div>
+  <div class="nav-links">
+    <a href="#code">The Code</a>
+    <a href="#experience">Experience</a>
+    <a href="#proof">Proof</a>
+    <a href="#pricing">Tickets</a>
+    <a href="#sponsors">Sponsors</a>
+    <a class="nav-cta" href="#pricing">Buy Your Ticket</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-badge">7th Annual &mdash; 300 Operators &mdash; Zero Bullshit</div>
+  <h1>Champions Don't<br><span class="accent">Play Safe.</span></h1>
+  <p class="hero-sub">The business summit for operators who live by a code, not a playbook. Three days with 300 people who show up as themselves, break things on purpose, teach what they learn, and refuse to be a dick about any of it.</p>
+  <div class="hero-details">September 16&ndash;18 <span>&bull;</span> Fort Worth, TX <span>&bull;</span> 2026</div>
+  <div>
+    <a href="#pricing" class="btn-primary">Buy Your Ticket</a>
+    <a href="#code" class="btn-outline">Read The Code</a>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-stat">
+    <div class="number">85%</div>
+    <div class="label">Rated Excellent</div>
+  </div>
+  <div class="proof-stat">
+    <div class="number">83%</div>
+    <div class="label">Word of Mouth</div>
+  </div>
+  <div class="proof-stat">
+    <div class="number">0</div>
+    <div class="label">Negative Ratings</div>
+  </div>
+  <div class="proof-stat">
+    <div class="number">7</div>
+    <div class="label">Years Running</div>
+  </div>
+</div>
+
+<!-- THE CHAMPIONS CODE -->
+<section class="section-dark" id="code">
+  <div class="container">
+    <div class="section-label">The Champions Code</div>
+    <div class="section-title">Six Rules. One Room.<br>No Exceptions.</div>
+    <p class="section-desc">This isn't a poster on a wall. It's the operating system of the room. If these lines sound like you, you should be there. If they don't, you probably shouldn't.</p>
+
+    <div class="code-grid">
+      <div class="code-card">
+        <div class="code-number">01</div>
+        <h3>Show Up as Yourself</h3>
+        <p>No persona. No pitch face. The room only works if the people in it are real.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">02</div>
+        <h3>Go Break Shit Trying New Things</h3>
+        <p>Perfection is for people who aren't in motion. Champions test, fail, learn, and go again.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">03</div>
+        <h3>Teach What You Learn</h3>
+        <p>Hoarding knowledge is a small move. The room gets stronger when everyone shares.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">04</div>
+        <h3>Family First in All Things</h3>
+        <p>Business serves life, not the other way around. Build empires AND show up for the people who matter.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">05</div>
+        <h3>Be Your Own Champion</h3>
+        <p>Nobody's coming to save you. Own your growth. Own your wins. Own your next move.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">06</div>
+        <h3>Don't Be a Dick</h3>
+        <p>Edge without ego. Directness without cruelty. We say hard things because we give a damn, not because we want to look tough.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE ANTI-EVERYTHING -->
+<section class="section-carbon">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">What This Isn't</div>
+    <div class="section-title" style="margin-left:auto;margin-right:auto;">Not Corporate. Not Woo-Woo.<br>Not Bro-Culture.</div>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">You've been to the other kind. You know exactly what we're talking about.</p>
+
+    <div class="anti-grid">
+      <div class="anti-card">
+        <div class="anti-label">Not This</div>
+        <h3>Corporate Conferences</h3>
+        <p>Where you collect brochures, pretend to care about the keynote, and forget half the names two weeks later.</p>
+      </div>
+      <div class="anti-card">
+        <div class="anti-label">Not This</div>
+        <h3>Woo-Woo Retreats</h3>
+        <p>Where someone who's never made payroll tells you to manifest a better Q4 and "align your energy."</p>
+      </div>
+      <div class="anti-card">
+        <div class="anti-label">Not This</div>
+        <h3>Bro-Culture Stage Shows</h3>
+        <p>Where a guy with a rented Lambo tells you to sleep less and "grind" is the answer to every question.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF / TESTIMONIALS -->
+<section class="section-deep" id="proof">
+  <div class="container">
+    <div class="section-label">The Room Speaks</div>
+    <div class="section-title">Don't Take Our Word For It.<br>Take Theirs.</div>
+    <p class="section-desc">Every quote below is from a verified 2025 summit attendee. Unedited. Unfiltered. Real operators who've been in the room.</p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <blockquote>"The energy of people who truly want to help each other grow their businesses. You can't help but WANT to be a part of it!"</blockquote>
+        <cite>&mdash; 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">Code #3: Teach What You Learn</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"I really walked away with tangible actionable items that I can put into practice right now to make a difference in my business."</blockquote>
+        <cite>&mdash; Jennifer B., Executive Recruiter</cite><br>
+        <span class="testimonial-code">Code #2: Go Break Shit</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Every single speaker, session, panel, activity was relevant and impactful."</blockquote>
+        <cite>&mdash; 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">Code #5: Be Your Own Champion</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"High-quality people making the networking great."</blockquote>
+        <cite>&mdash; 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">Code #6: Don't Be a Dick</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"The overall atmosphere" was cited as the #1 favorite part by 11 of 26 respondents. Atmosphere doesn't happen by accident. It happens when people show up real.</blockquote>
+        <cite>&mdash; 2025 Post-Summit Survey</cite><br>
+        <span class="testimonial-code">Code #1: Show Up as Yourself</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Love the take action theme, but need more opportunities to take action."</blockquote>
+        <cite>&mdash; 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">Code #5: They Wanted to DO, Not Watch</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU EXPERIENCE -->
+<section class="section-dark" id="experience">
+  <div class="container">
+    <div class="section-label">Three Days of Work</div>
+    <div class="section-title">This Is What the Room Looks Like.</div>
+    <p class="section-desc">Every session is built for Monday-morning implementation. You don't just get inspired &mdash; you leave with a plan and the people to hold you to it.</p>
+
+    <div class="experience-grid">
+      <div class="exp-card">
+        <div class="exp-icon">&#9876;</div>
+        <h3>Workshops &amp; Masterminds</h3>
+        <p>Hands-on sessions where you work on your actual business &mdash; not hypotheticals. Build your champion's shield, refine your pitch, and solve real problems in real time.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">&#9733;</div>
+        <h3>Panels &amp; Interactive Sessions</h3>
+        <p>Operators who've been in the trenches &mdash; not keynote circuit regulars. Every speaker was chosen because they've built what you're building.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">&#10042;</div>
+        <h3>Tactical Networking</h3>
+        <p>Structured, trust-based connections &mdash; not hallway badge-scanning. The relationships from this room turn into weekly referral conversations across 25 SCN chapters.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">&#9790;</div>
+        <h3>After-Hours Events</h3>
+        <p>Happy hour. Karaoke. The conversations that happen after the sessions end are where the real deals start. Every night, the room keeps going.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">&#9878;</div>
+        <h3>VIP Speaker Showdown</h3>
+        <p>Six attendees pitch live on stage. Many will apply, only six get through. This is Code #5 in action &mdash; be your own champion. VIP only.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">&#10004;</div>
+        <h3>45-Day Post-Summit Check-In</h3>
+        <p>VIP attendees get a structured accountability check-in 45 days after the event. Because the real test isn't what you learn &mdash; it's what you do with it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section-carbon" id="pricing">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Get In The Room</div>
+    <div class="section-title" style="margin-left:auto;margin-right:auto;">Two Ways In. One Room.<br>Both Change Everything.</div>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">One referral from someone you meet in this room pays for the ticket multiple times over. The people who've been don't question the price.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">General Admission</div>
+        <div class="price-amount">$597</div>
+        <div class="price-term">3-Day Access</div>
+        <ul class="price-features">
+          <li>Full summit access &mdash; every session, every day</li>
+          <li>Workshops, masterminds &amp; panels</li>
+          <li>Interactive experiences</li>
+          <li>Exclusive networking</li>
+          <li>Nightly after-hours events</li>
+          <li>Happy hour &amp; karaoke night</li>
+          <li>Badass Business Summit swag bag</li>
+        </ul>
+        <a href="#" class="btn-primary">Buy GA Ticket</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-tier">VIP Admission</div>
+        <div class="price-amount">$1,097</div>
+        <div class="price-term">The Inner Circle</div>
+        <ul class="price-features">
+          <li>Everything in General Admission, plus&hellip;</li>
+          <li>Private VIP morning starter event</li>
+          <li>Thursday &amp; Friday VIP mastermind lunch</li>
+          <li>Lunch with speakers provided</li>
+          <li>Application to VIP Speaker Showdown (6 spots)</li>
+          <li>2026 Summit T-shirt</li>
+          <li>45-day post-VIP action plan check-in</li>
+        </ul>
+        <a href="#" class="btn-primary">Buy VIP Ticket</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY STRIP -->
+<div class="urgency-strip">
+  <h2>300 Seats. One Room.<br>When They're Gone, They're Gone.</h2>
+  <p>83% of last year's attendees heard about BABS through word of mouth &mdash; not marketing. The room sells itself. But the room has a limit.</p>
+  <a href="#pricing" class="btn-primary">Lock Your Seat Now</a>
+</div>
+
+<!-- SPONSORS -->
+<section class="section-dark" id="sponsors">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Diamond Sponsors</div>
+    <div class="section-title">Backed by Operators Who<br>Walk the Walk.</div>
+
+    <div class="sponsor-row">
+      <div class="sponsor-logo">VFO Consulting Group</div>
+      <div class="sponsor-logo">Wealth Strategies Advisory</div>
+      <div class="sponsor-logo">Westport Studios</div>
+      <div class="sponsor-logo">Storyteller Promotions</div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <p style="font-size:16px; color:var(--chalk); margin-bottom:16px;"><strong>Ready to put your brand in front of 300 Badass business owners?</strong></p>
+      <a href="#" class="btn-outline" style="margin-left:0;">Become a Sponsor</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-deep" style="text-align:center; padding:100px 40px;">
+  <div class="container">
+    <div class="section-title" style="margin-bottom:16px;">The Code is the Room.<br>The Room is the Code.</div>
+    <p style="font-size:17px; color:var(--smoke); max-width:600px; margin:0 auto 40px; line-height:1.8;">Show up as yourself. Go break shit trying new things. Teach what you learn. Family first. Be your own champion. Don't be a dick. If that sounds like you, we'll see you in Fort Worth.</p>
+    <a href="#pricing" class="btn-primary" style="padding:20px 60px; font-size:16px;">Buy Your Ticket</a>
+    <p style="margin-top:24px; font-size:13px; color:var(--smoke);">September 16&ndash;18, 2026 &bull; Fort Worth, TX &bull; 300 Seats</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">BAD<span>A</span>SS BUSINESS SUMMIT</div>
+  <div class="footer-tagline">Be the Champion of Your Success</div>
+  <div class="footer-links">
+    <a href="#">Home</a>
+    <a href="#">Schedule</a>
+    <a href="#">Speakers</a>
+    <a href="#">Sponsors</a>
+    <a href="#">Venue</a>
+    <a href="#">Contact</a>
+    <a href="#pricing">Buy Ticket</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Success Champions Networking. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

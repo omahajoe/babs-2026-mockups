@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Badass Business Summit | Champions Don't Play Safe</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --champion-red: #E31B23;
+    --dark-red: #B81620;
+    --black: #111111;
+    --near-black: #1A1A1A;
+    --charcoal: #333333;
+    --mid-gray: #666666;
+    --light-gray: #999999;
+    --silver: #E0E0E0;
+    --off-white: #F7F7F7;
+    --warm-white: #FAFAF8;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ========== REVISION BANNER ========== */
+  .revision-banner {
+    background: var(--off-white);
+    border-bottom: 1px solid var(--silver);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .revision-banner h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px; font-weight: 700;
+    color: var(--champion-red);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+  .revision-banner > p {
+    font-size: 14px; color: var(--light-gray); max-width: 700px; margin: 0 auto;
+  }
+  .revision-notes {
+    max-width: 800px; margin: 32px auto 0;
+    text-align: left;
+    background: var(--white);
+    border: 1px solid var(--silver);
+    padding: 24px 32px;
+  }
+  .revision-notes h3 {
+    font-size: 13px; font-weight: 700;
+    color: var(--champion-red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .revision-notes ul { list-style: none; padding: 0; }
+  .revision-notes li {
+    font-size: 13px; color: var(--mid-gray);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--off-white);
+    line-height: 1.6;
+  }
+  .revision-notes li:last-child { border: none; }
+  .revision-notes li::before {
+    content: ''; display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--champion-red);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  /* ========== NAVIGATION ========== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--silver);
+    padding: 0 60px;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; font-size: 20px; letter-spacing: 2px;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+  .nav-logo span { color: var(--champion-red); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    color: var(--mid-gray); text-decoration: none;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    background: var(--champion-red) !important;
+    color: var(--white) !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px;
+    border: none; cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--dark-red) !important; }
+
+  /* ========== HERO SECTION ========== */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    background: var(--white);
+    margin-top: 72px;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 10%; right: 10%;
+    height: 1px;
+    background: var(--silver);
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--champion-red);
+    margin-bottom: 40px;
+  }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(56px, 9vw, 120px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    max-width: 1000px;
+    color: var(--black);
+  }
+  .hero h1 .accent { color: var(--champion-red); }
+  .hero-sub {
+    font-size: 19px; color: var(--mid-gray);
+    max-width: 560px; margin-bottom: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+  .hero-qualifier {
+    font-style: italic; color: var(--light-gray); font-size: 14px;
+    margin-top: 8px; max-width: 500px;
+  }
+  .hero-details {
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 32px 0 48px;
+    padding: 16px 0;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .hero-details span { color: var(--champion-red); margin: 0 16px; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--champion-red);
+    color: var(--white);
+    padding: 18px 56px;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--dark-red); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(227,27,35,0.2); }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--black);
+    padding: 18px 56px;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--black);
+    transition: all 0.3s;
+    margin-left: 16px;
+  }
+  .btn-outline:hover { background: var(--black); color: var(--white); }
+
+  /* ========== PROOF BAR ========== */
+  .proof-bar {
+    background: var(--black);
+    padding: 56px 60px;
+    display: flex; justify-content: center;
+    gap: 100px; flex-wrap: wrap;
+  }
+  .proof-stat { text-align: center; }
+  .proof-stat .number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 56px; font-weight: 700; color: var(--white);
+    line-height: 1;
+  }
+  .proof-stat .label {
+    font-size: 11px; color: rgba(255,255,255,0.5);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* ========== SECTION STYLES ========== */
+  section { padding: 120px 60px; }
+  .section-white { background: var(--white); }
+  .section-warm { background: var(--warm-white); }
+  .section-off { background: var(--off-white); }
+  .section-black { background: var(--black); color: var(--white); }
+  .section-red { background: var(--champion-red); color: var(--white); }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--champion-red);
+    margin-bottom: 20px;
+  }
+  .section-black .section-label { color: rgba(255,255,255,0.4); }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 700; line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+  .section-title .red-accent { color: var(--champion-red); }
+  .section-desc {
+    font-size: 17px; color: var(--mid-gray);
+    max-width: 600px; line-height: 1.9;
+  }
+  .section-black .section-desc { color: rgba(255,255,255,0.6); }
+
+  /* ========== WHAT YOU LEAVE WITH (VALUE OUTCOMES) ========== */
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 72px;
+    background: var(--silver);
+    border: 1px solid var(--silver);
+  }
+  .outcome-card {
+    background: var(--white);
+    padding: 48px 36px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .outcome-card:hover {
+    background: var(--off-white);
+  }
+  .outcome-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px; font-weight: 700;
+    color: var(--off-white);
+    line-height: 1;
+    position: absolute; top: 16px; right: 20px;
+  }
+  .outcome-card:hover .outcome-number { color: rgba(227,27,35,0.08); }
+  .outcome-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px; font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    position: relative;
+    color: var(--black);
+    line-height: 1.2;
+  }
+  .outcome-card p {
+    font-size: 14px; color: var(--mid-gray);
+    line-height: 1.8;
+    position: relative;
+  }
+
+  /* ========== WHO THIS IS FOR ========== */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-top: 72px;
+  }
+  .who-card {
+    padding: 40px 36px;
+    border-bottom: 1px solid var(--silver);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .who-card:nth-child(odd) { border-right: 1px solid var(--silver); }
+  .who-card:nth-last-child(-n+2) { border-bottom: none; }
+  .who-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 3px; height: 0;
+    background: var(--champion-red);
+    transition: height 0.3s;
+  }
+  .who-card:hover::before { height: 60%; }
+  .who-card:hover { background: var(--off-white); }
+  .who-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px; font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: var(--black);
+  }
+  .who-card p {
+    font-size: 14px; color: var(--mid-gray);
+    line-height: 1.8;
+  }
+
+  /* ========== CHAMPIONS CODE ========== */
+  .code-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 72px;
+    background: rgba(255,255,255,0.1);
+  }
+  .code-card {
+    background: var(--near-black);
+    padding: 48px 36px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .code-card:hover {
+    background: var(--charcoal);
+  }
+  .code-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px; font-weight: 700;
+    color: rgba(227,27,35,0.12);
+    line-height: 1;
+    position: absolute; top: 16px; right: 20px;
+  }
+  .code-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px; font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+    color: var(--white);
+  }
+  .code-card p {
+    font-size: 14px; color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+    position: relative;
+  }
+
+  /* ========== TESTIMONIALS ========== */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 72px;
+  }
+  .testimonial-card {
+    padding: 40px;
+    border: 1px solid var(--silver);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '\201C';
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    color: var(--off-white);
+    position: absolute;
+    top: 8px; left: 24px;
+    line-height: 1;
+  }
+  .testimonial-card blockquote {
+    font-size: 16px; font-style: italic;
+    line-height: 1.8; color: var(--charcoal);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .testimonial-card cite {
+    font-size: 13px; color: var(--light-gray);
+    font-style: normal; font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .testimonial-code {
+    display: inline-block;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--champion-red);
+    margin-top: 8px;
+  }
+
+  /* ========== PRICING ========== */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-top: 72px;
+    max-width: 900px;
+    margin-left: auto; margin-right: auto;
+    border: 1px solid var(--silver);
+  }
+  .price-card {
+    padding: 56px 48px;
+    text-align: center;
+    position: relative;
+    background: var(--white);
+  }
+  .price-card:first-child { border-right: 1px solid var(--silver); }
+  .price-card.featured {
+    background: var(--black);
+    color: var(--white);
+  }
+  .price-card.featured::before {
+    content: 'INNER CIRCLE';
+    position: absolute; top: 0; left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--champion-red);
+    color: var(--white);
+    padding: 6px 24px;
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+  .price-tier {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 8px;
+  }
+  .featured .price-tier { color: rgba(255,255,255,0.4); }
+  .price-amount {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px; font-weight: 700;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .featured .price-amount { color: var(--white); }
+  .price-term {
+    font-size: 12px; color: var(--light-gray);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .featured .price-term { color: rgba(255,255,255,0.4); }
+  .price-features {
+    list-style: none; text-align: left;
+    margin-bottom: 40px;
+  }
+  .price-features li {
+    font-size: 14px; color: var(--charcoal);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--off-white);
+  }
+  .featured .price-features li {
+    color: rgba(255,255,255,0.75);
+    border-bottom-color: rgba(255,255,255,0.06);
+  }
+  .price-features li::before {
+    content: ''; display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--champion-red);
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+  .price-card .btn-primary { width: 100%; text-align: center; padding: 16px; }
+  .featured .btn-primary { background: var(--champion-red); }
+
+  /* ========== COUNTDOWN / URGENCY ========== */
+  .urgency-strip {
+    background: var(--champion-red);
+    padding: 100px 60px;
+    text-align: center;
+  }
+  .urgency-strip h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .urgency-strip p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.85);
+    max-width: 560px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+  }
+  .urgency-strip .btn-primary {
+    background: var(--white);
+    color: var(--champion-red);
+    font-weight: 800;
+  }
+  .urgency-strip .btn-primary:hover {
+    background: var(--off-white);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+
+  /* ========== SPONSORS ========== */
+  .sponsor-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 72px;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .sponsor-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px; font-weight: 600;
+    color: var(--light-gray);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+  .sponsor-logo:hover { opacity: 1; color: var(--black); }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--black);
+    padding: 64px 60px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px; font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--champion-red); }
+  .footer-tagline {
+    font-size: 11px; letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 32px;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy {
+    font-size: 12px; color: rgba(255,255,255,0.15);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 80px 24px; }
+    .proof-bar { gap: 40px; padding: 40px 24px; }
+    .outcome-grid { grid-template-columns: 1fr; }
+    .who-grid { grid-template-columns: 1fr; }
+    .who-card:nth-child(odd) { border-right: none; }
+    .code-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
+    .price-card:first-child { border-right: none; border-bottom: 1px solid var(--silver); }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .hero { padding: 100px 24px 60px; }
+    .btn-outline { margin-left: 0; margin-top: 12px; }
+    .revision-banner { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- REVISION BANNER -->
+<div class="revision-banner">
+  <h2>OPTION D — V2-ALT-B (ALTERNATE DESIGN)</h2>
+  <p>Same V2-Alt copy, completely different visual direction — light, editorial, magazine-feel</p>
+  <div class="revision-notes">
+    <h3>Design Direction</h3>
+    <ul>
+      <li><strong>Light background with bold black typography</strong> — clean, open, editorial feel vs. the dark/moody original</li>
+      <li><strong>Same page structure and copy as V2-Alt</strong> — hero purely value-driven, Code as "by the way" discovery</li>
+      <li><strong>Champion red used as punch, not atmosphere</strong> — accents, not wallpaper</li>
+      <li><strong>Champions Code section stays dark</strong> — the one section that goes black, creating visual weight where it matters</li>
+      <li><strong>Magazine-grid layouts</strong> — clean borders, generous whitespace, 2-column persona grid</li>
+    </ul>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">BAD<span>A</span>SS BUSINESS SUMMIT</div>
+  <div class="nav-links">
+    <a href="#value">What You Get</a>
+    <a href="#who">Who It's For</a>
+    <a href="#code">The Code</a>
+    <a href="#proof">Proof</a>
+    <a href="#pricing">Tickets</a>
+    <a class="nav-cta" href="#pricing">Buy Your Ticket</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-badge">7th Annual &bull; 300 Operators &bull; Fort Worth, TX</div>
+  <h1>Champions Don't<br><span class="accent">Play Safe.</span></h1>
+  <p class="hero-sub">Three days with 300 operators who build real companies, share what they know, and hold each other to a higher standard. The room that changes everything.</p>
+  <p class="hero-qualifier">Not corporate. Not woo-woo. Not bro-culture. Something else entirely.</p>
+  <div class="hero-details">September 16–18 <span>&bull;</span> Fort Worth, TX <span>&bull;</span> 2026</div>
+  <div>
+    <a href="#pricing" class="btn-primary">Buy Your Ticket</a>
+    <a href="#value" class="btn-outline">See What You'll Get</a>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-stat">
+    <div class="number">85%</div>
+    <div class="label">Rated Excellent</div>
+  </div>
+  <div class="proof-stat">
+    <div class="number">83%</div>
+    <div class="label">Word of Mouth</div>
+  </div>
+  <div class="proof-stat">
+    <div class="number">0</div>
+    <div class="label">Negative Ratings</div>
+  </div>
+  <div class="proof-stat">
+    <div class="number">7</div>
+    <div class="label">Years Running</div>
+  </div>
+</div>
+
+<!-- WHAT YOU LEAVE WITH (VALUE FIRST) -->
+<section class="section-white" id="value">
+  <div class="container">
+    <div class="section-label">What You Leave With</div>
+    <div class="section-title">The Room Changes <span class="red-accent">Everything.</span></div>
+    <p class="section-desc">This isn't a conference where you collect business cards and forget names. You leave BABS with concrete things you didn't have when you walked in.</p>
+
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="outcome-number">01</div>
+        <h3>Relationships That Become Revenue</h3>
+        <p>The connections from this room turn into referral partners, JV deals, and weekly accountability calls. 83% of attendees came through word of mouth — because the relationships are that real. Many attendees trace six-figure deals back to someone they met in this room.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-number">02</div>
+        <h3>A Plan You'll Actually Execute</h3>
+        <p>Every session is built for Monday-morning implementation. You don't just get inspired — you build your 90-day action plan in the room, with the people who'll hold you to it. VIP attendees get a 45-day post-summit check-in to make sure it happened.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-number">03</div>
+        <h3>A Network Across 25 Cities</h3>
+        <p>BABS is the annual gathering of the Success Champions Networking community — 25 chapters nationwide. When you leave, you don't lose the room. You gain access to operators in your city who live by the same code, meeting weekly.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-number">04</div>
+        <h3>Answers to Your Actual Problems</h3>
+        <p>Workshops and masterminds where you work on YOUR business — not hypotheticals. Bring your real challenges. Get real solutions. From people who've already solved what you're stuck on.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-number">05</div>
+        <h3>Speakers Who've Built What You're Building</h3>
+        <p>No keynote circuit regulars. Every speaker was chosen because they're in the trenches building companies, not because they're good at talking about it. Panels are interactive — you ask, they answer.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-number">06</div>
+        <h3>Three Nights You'll Actually Remember</h3>
+        <p>Happy hour. Karaoke. After-hours conversations where the real deals get done. The sessions end, but the room doesn't stop. Some of the best partnerships start over a drink at 10pm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS ROOM IS FOR -->
+<section class="section-warm" id="who">
+  <div class="container">
+    <div class="section-label">Who This Room Is For</div>
+    <div class="section-title">You Know Who You Are.</div>
+    <p class="section-desc">This room isn't for everyone — and that's the point. It's built for a specific kind of operator. If the descriptions below sound like your Tuesday, you belong here.</p>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <h3>Business Owners Who Show Up Real</h3>
+        <p>You're done performing. You want a room where you can drop the pitch face, ask the hard questions, and get honest answers from people who've been where you're going.</p>
+      </div>
+      <div class="who-card">
+        <h3>Operators Who Build &amp; Break Things</h3>
+        <p>You'd rather launch imperfectly than plan forever. You test, fail, adjust, and go again. You need a room that moves at your speed and respects the hustle.</p>
+      </div>
+      <div class="who-card">
+        <h3>Leaders Who Put Family First</h3>
+        <p>You're building an empire AND coaching little league. You want a community that doesn't make you choose between ambition and the people who matter most.</p>
+      </div>
+      <div class="who-card">
+        <h3>Givers Who Share What They Know</h3>
+        <p>Hoarding knowledge isn't your style. You believe the room gets stronger when everyone teaches, and you're looking for people who operate the same way.</p>
+      </div>
+      <div class="who-card">
+        <h3>Self-Starters Who Own Their Growth</h3>
+        <p>Nobody's coming to save you, and you wouldn't want them to. You own your wins, your losses, and your next move. This room is full of people just like you.</p>
+      </div>
+      <div class="who-card">
+        <h3>Direct People Who Give a Damn</h3>
+        <p>You say hard things because you care, not because you want to look tough. Edge without ego. Directness without cruelty. That's how this room operates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CHAMPIONS CODE (DARK SECTION — VISUAL WEIGHT) -->
+<section class="section-black" id="code">
+  <div class="container">
+    <div class="section-label">Oh, and One More Thing</div>
+    <div class="section-title">There's a Reason the Room<br><span class="red-accent">Feels Different.</span></div>
+    <p class="section-desc">Everything above — the outcomes, the relationships, the quality of people — doesn't happen by accident. This room runs on a code. Six rules that every person in the room lives by. That's why it works.</p>
+
+    <div class="code-grid">
+      <div class="code-card">
+        <div class="code-number">01</div>
+        <h3>Show Up as Yourself</h3>
+        <p>No persona. No pitch face. The room only works if the people in it are real.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">02</div>
+        <h3>Go Break Shit Trying New Things</h3>
+        <p>Perfection is for people who aren't in motion. Champions test, fail, learn, and go again.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">03</div>
+        <h3>Teach What You Learn</h3>
+        <p>Hoarding knowledge is a small move. The room gets stronger when everyone shares.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">04</div>
+        <h3>Family First in All Things</h3>
+        <p>Business serves life, not the other way around. Build empires AND show up for the people who matter.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">05</div>
+        <h3>Be Your Own Champion</h3>
+        <p>Nobody's coming to save you. Own your growth. Own your wins. Own your next move.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-number">06</div>
+        <h3>Don't Be a Dick</h3>
+        <p>Edge without ego. Directness without cruelty. We say hard things because we give a damn, not because we want to look tough.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF / TESTIMONIALS -->
+<section class="section-white" id="proof">
+  <div class="container">
+    <div class="section-label">The Room Speaks</div>
+    <div class="section-title">Don't Take Our Word For It.<br>Take Theirs.</div>
+    <p class="section-desc">Every quote below is from a verified 2025 summit attendee. Unedited. Unfiltered. Real operators who've been in the room.</p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <blockquote>"The energy of people who truly want to help each other grow their businesses. You can't help but WANT to be a part of it!"</blockquote>
+        <cite>— 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">The Room Is The Product</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"I really walked away with tangible actionable items that I can put into practice right now to make a difference in my business."</blockquote>
+        <cite>— Jennifer B., Executive Recruiter</cite><br>
+        <span class="testimonial-code">Built for Monday-Morning Execution</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Every single speaker, session, panel, activity was relevant and impactful."</blockquote>
+        <cite>— 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">Zero Filler. All Signal.</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"High-quality people making the networking great."</blockquote>
+        <cite>— 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">The Code Protects the Room</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"The overall atmosphere" was cited as the #1 favorite part by 11 of 26 respondents. Atmosphere doesn't happen by accident. It happens when people show up real.</blockquote>
+        <cite>— 2025 Post-Summit Survey</cite><br>
+        <span class="testimonial-code">The Code Creates the Atmosphere</span>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Love the take action theme, but need more opportunities to take action."</blockquote>
+        <cite>— 2025 Summit Attendee</cite><br>
+        <span class="testimonial-code">They Wanted to Do, Not Watch</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section-warm" id="pricing">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Get In The Room</div>
+    <div class="section-title" style="margin-left:auto;margin-right:auto;">Two Ways In. One Room.<br>Both Change Everything.</div>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">One referral from someone you meet in this room pays for the ticket multiple times over. The people who've been don't question the price.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">General Admission</div>
+        <div class="price-amount">$597</div>
+        <div class="price-term">3-Day Access</div>
+        <ul class="price-features">
+          <li>Full summit access — every session, every day</li>
+          <li>Workshops, masterminds &amp; panels</li>
+          <li>Interactive experiences</li>
+          <li>Exclusive networking</li>
+          <li>Nightly after-hours events</li>
+          <li>Happy hour &amp; karaoke night</li>
+          <li>Badass Business Summit swag bag</li>
+        </ul>
+        <a href="#" class="btn-primary">Buy GA Ticket</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-tier">VIP Admission</div>
+        <div class="price-amount">$1,097</div>
+        <div class="price-term">The Inner Circle</div>
+        <ul class="price-features">
+          <li>Everything in General Admission, plus…</li>
+          <li>Private VIP morning starter event</li>
+          <li>Thursday &amp; Friday VIP mastermind lunch</li>
+          <li>Lunch with speakers provided</li>
+          <li>Application to VIP Speaker Showdown (6 spots)</li>
+          <li>2026 Summit T-shirt</li>
+          <li>45-day post-VIP action plan check-in</li>
+        </ul>
+        <a href="#" class="btn-primary">Buy VIP Ticket</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY STRIP -->
+<div class="urgency-strip">
+  <h2>300 Seats. One Room.<br>When They're Gone, They're Gone.</h2>
+  <p>83% of last year's attendees heard about BABS through word of mouth — not marketing. The room sells itself. But the room has a limit.</p>
+  <a href="#pricing" class="btn-primary">Lock Your Seat Now</a>
+</div>
+
+<!-- SPONSORS -->
+<section class="section-white" id="sponsors">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Diamond Sponsors</div>
+    <div class="section-title">Backed by Operators Who<br>Walk the Walk.</div>
+
+    <div class="sponsor-row">
+      <div class="sponsor-logo">VFO Consulting Group</div>
+      <div class="sponsor-logo">Wealth Strategies Advisory</div>
+      <div class="sponsor-logo">Westport Studios</div>
+      <div class="sponsor-logo">Storyteller Promotions</div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <p style="font-size:16px; color:var(--charcoal); margin-bottom:16px;"><strong>Ready to put your brand in front of 300 Badass business owners?</strong></p>
+      <a href="#" class="btn-outline" style="margin-left:0;">Become a Sponsor</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-warm" style="text-align:center; padding:120px 60px;">
+  <div class="container">
+    <div class="section-title" style="margin-bottom:16px;">Champions Don't Play Safe.<br>The Room Changes Everything.</div>
+    <p style="font-size:17px; color:var(--mid-gray); max-width:600px; margin:0 auto 48px; line-height:1.9;">300 operators. Three days. Relationships that become revenue, plans you'll actually execute, and a network across 25 cities. Real business gets done here — and it happens to be run by people who live by a code. That's why the room works.</p>
+    <a href="#pricing" class="btn-primary" style="padding:22px 72px; font-size:15px;">Buy Your Ticket</a>
+    <p style="margin-top:28px; font-size:12px; color:var(--light-gray); letter-spacing:2px; text-transform:uppercase;">September 16–18, 2026 &bull; Fort Worth, TX &bull; 300 Seats</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">BAD<span>A</span>SS BUSINESS SUMMIT</div>
+  <div class="footer-tagline">Real Business. Real People. Real Results.</div>
+  <div class="footer-links">
+    <a href="#">Home</a>
+    <a href="#">Schedule</a>
+    <a href="#">Speakers</a>
+    <a href="#">Sponsors</a>
+    <a href="#">Venue</a>
+    <a href="#">Contact</a>
+    <a href="#pricing">Buy Ticket</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Success Champions Networking. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
