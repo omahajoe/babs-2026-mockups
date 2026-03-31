@@ -112,6 +112,10 @@
   .card-tag.dark { background: #111; color: #fff; border-color: #111; }
   .card-tag.light { background: #fff; color: #111; border-color: #E0E0E0; }
   .card-tag.original { background: #E31B23; color: #fff; border-color: #E31B23; }
+  .card-tag.new { background: #E31B23; color: #fff; border-color: #E31B23; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+  .card.featured { border: 2px solid #E31B23; grid-column: 1 / -1; }
+  .card.featured h2 { font-size: 28px; }
 
   .footer {
     text-align: center;
@@ -132,10 +136,18 @@
 
 <div class="header">
   <h1>BABS 2026 <span>Option D</span> Mockups</h1>
-  <p>Four versions of the "Champions Don't Play Safe" website direction. Same DNA, different executions.</p>
+  <p>Five versions of the "Champions Don't Play Safe" website direction. Same DNA, different executions.</p>
 </div>
 
 <div class="grid">
+  <a href="v3-designed.html" class="card featured">
+    <span class="card-tag new">New</span>
+    <div class="card-label">Version 3 — Premium Conference Design</div>
+    <h2>The Designed Version</h2>
+    <p>Senior-level design overhaul of V2 Alt. Asymmetric layouts, stock photography with parallax, Playfair Display italic accents, scroll-triggered animations, animated counters, split-screen Champions Code section, and polished micro-interactions. Premium conference vibe — think Web Summit meets Nike.</p>
+    <div class="card-cta">View V3 Designed &rarr;</div>
+  </a>
+
   <a href="original-d.html" class="card">
     <span class="card-tag original">Original</span>
     <div class="card-label">Version 1 — Original Option D</div>
