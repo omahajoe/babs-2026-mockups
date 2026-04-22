@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /mockups.html
+Disallow: /original-d.html
+Disallow: /v1-revised.html
+Disallow: /v2-alt-light.html
+Disallow: /v2-dark.html
+Disallow: /v3-designed.html
