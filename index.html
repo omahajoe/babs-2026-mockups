@@ -121,17 +121,16 @@
     background: rgba(10,10,10,0.95);
     border-bottom-color: rgba(255,255,255,0.06);
   }
-  nav.scrolled .nav-logo { color: var(--white); }
   nav.scrolled .nav-links a { color: rgba(255,255,255,0.5); }
   nav.scrolled .nav-links a:hover { color: var(--white); }
   .nav-logo {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700; font-size: 18px; letter-spacing: 3px;
-    color: var(--black);
-    text-transform: uppercase;
-    transition: color 0.4s;
+    display: flex; align-items: center;
+    text-decoration: none;
   }
-  .nav-logo span { color: var(--champion-red); }
+  .nav-logo img { height: 36px; width: auto; display: block; }
+  .nav-logo .nav-logo-dark { display: none; }
+  nav.scrolled .nav-logo .nav-logo-light { display: none; }
+  nav.scrolled .nav-logo .nav-logo-dark { display: block; }
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a {
     color: var(--mid-gray); text-decoration: none;
@@ -220,7 +219,6 @@
     font-family: 'Oswald', sans-serif;
     font-style: normal;
     font-weight: 700;
-    text-transform: none;
     letter-spacing: -1px;
     color: var(--champion-red);
   }
@@ -377,7 +375,6 @@
     font-family: 'Oswald', sans-serif;
     font-style: normal;
     font-weight: 700;
-    text-transform: none;
     letter-spacing: 0;
     color: var(--champion-red);
   }
@@ -909,7 +906,6 @@
     font-family: 'Oswald', sans-serif;
     font-style: normal;
     font-weight: 700;
-    text-transform: none;
     letter-spacing: 0;
     color: var(--champion-red);
   }
@@ -989,13 +985,10 @@
   }
   .footer-left {}
   .footer-logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px; font-weight: 700;
-    color: var(--white);
-    letter-spacing: 3px;
-    margin-bottom: 6px;
+    height: 56px; width: auto;
+    display: block;
+    margin-bottom: 12px;
   }
-  .footer-logo span { color: var(--champion-red); }
   .footer-tagline {
     font-size: 11px; letter-spacing: 3px;
     text-transform: uppercase;
@@ -1065,7 +1058,10 @@
 
 <!-- NAVIGATION -->
 <nav id="mainNav">
-  <div class="nav-logo">BAD<span>A</span>SS BUSINESS SUMMIT</div>
+  <a href="#top" class="nav-logo" aria-label="Badass Business Summit — home">
+    <img src="images/babs-logo.png" alt="Badass Business Summit" class="nav-logo-light">
+    <img src="images/babs-logo-white.png" alt="" aria-hidden="true" class="nav-logo-dark">
+  </a>
   <div class="nav-links">
     <a href="#value">The 3 Pillars</a>
     <a href="#who">Who It's For</a>
@@ -1430,9 +1426,8 @@
     <h2 class="section-title reveal" style="text-align:center;">Backed by Builders Who Walk the <span class="italic-accent">Walk.</span></h2>
 
     <div class="sponsor-row reveal">
-      <div class="sponsor-logo">VFO Consulting Group</div>
-      <div class="sponsor-logo">Wealth Strategies Advisory</div>
-      <div class="sponsor-logo">Westport Studios</div>
+      <div class="sponsor-logo">YorCMO</div>
+      <div class="sponsor-logo">Go High Level</div>
       <div class="sponsor-logo">Storyteller Promotions</div>
     </div>
 
@@ -1456,7 +1451,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    <div class="footer-logo">BAD<span>A</span>SS BUSINESS SUMMIT</div>
+    <img src="images/babs-logo-white.png" alt="Badass Business Summit" class="footer-logo">
     <div class="footer-tagline">Real Business. Real People. Real Results.</div>
     <p class="footer-copy">&copy; 2026 Success Champions Networking. All rights reserved.</p>
   </div>
