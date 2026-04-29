@@ -355,13 +355,15 @@
     color: var(--champion-red);
     margin-bottom: 20px;
   }
-  .section-label::before {
+  .section-label::before,
+  .section-label::after {
     content: '';
     width: 24px; height: 2px;
     background: var(--champion-red);
   }
   .section-black .section-label { color: rgba(255,255,255,0.35); }
-  .section-black .section-label::before { background: rgba(255,255,255,0.15); }
+  .section-black .section-label::before,
+  .section-black .section-label::after { background: rgba(255,255,255,0.15); }
   .section-title {
     font-family: 'Oswald', sans-serif;
     font-size: clamp(36px, 4.5vw, 58px);
