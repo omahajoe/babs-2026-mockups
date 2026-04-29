@@ -179,25 +179,22 @@
   .hero-inner {
     position: relative; z-index: 2;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 80px;
+    text-align: center;
     max-width: 1320px;
     margin: 0 auto;
     padding: 80px 64px;
     width: 100%;
   }
-  .hero-content {
-    flex: 1 1 auto;
-    text-align: left;
-    min-width: 0;
-  }
+  .hero-content { padding-bottom: 20px; width: 100%; }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 12px;
     font-size: 11px; font-weight: 600;
     letter-spacing: 3px; text-transform: uppercase;
     color: rgba(255,255,255,0.5);
     margin-bottom: 32px;
+    justify-content: center;
   }
   .hero-badge::before,
   .hero-badge::after {
@@ -231,17 +228,30 @@
     max-width: 640px;
     line-height: 1.85;
     font-weight: 300;
+    margin: 0 auto;
   }
   .hero-sidebar {
     background: rgba(255,255,255,0.06);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.08);
-    padding: 40px 36px;
-    display: flex; flex-direction: column; gap: 28px;
-    flex: 0 0 360px;
+    padding: 32px 40px;
+    display: flex; flex-direction: column; gap: 24px;
+    width: 100%;
+    max-width: 880px;
+  }
+  .hero-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
   }
   .hero-detail-row {
     display: flex; align-items: center; gap: 16px;
+    flex: 1 1 0;
+    justify-content: flex-start;
+    text-align: left;
   }
   .hero-detail-icon {
     width: 44px; height: 44px;
@@ -263,9 +273,17 @@
     color: var(--white);
     letter-spacing: 0.5px;
   }
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
   .hero-sidebar .btn-primary {
-    width: 100%; text-align: center;
-    margin-top: 4px;
+    text-align: center;
   }
   .hero-sidebar .btn-ghost {
     text-align: center;
@@ -1058,16 +1076,10 @@
 
   /* ========== RESPONSIVE ========== */
   @media (max-width: 1024px) {
-    .hero-inner {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 40px;
-      padding: 60px 40px;
-    }
-    .hero-content { text-align: center; flex: 1 1 auto; }
-    .hero-sidebar { flex: 0 0 auto; width: 100%; max-width: 480px; }
-    .hero-sub { margin: 0 auto; }
+    .hero-inner { padding: 60px 40px; }
+    .hero-sidebar { max-width: 600px; }
+    .hero-details { flex-direction: column; align-items: stretch; gap: 16px; }
+    .hero-detail-row { justify-content: center; }
     .value-header { grid-template-columns: 1fr; gap: 40px; }
     .value-header-image { height: 280px; }
     .code-inner { grid-template-columns: 1fr; }
@@ -1133,29 +1145,33 @@
       <p class="hero-sub reveal reveal-delay-2">Three days with 300 business owners who build real companies, share what they know, and hold each other to a higher standard. Visibility. Partnerships. Habits. That's what this room runs on.<br><br><em style="color:rgba(255,255,255,0.4); font-size:14px;">Not corporate. Not woo-woo. Not bro-culture. Something else entirely.</em></p>
     </div>
     <div class="hero-sidebar reveal reveal-delay-3">
-      <div class="hero-detail-row">
-        <div class="hero-detail-icon">&#9670;</div>
-        <div class="hero-detail-text">
-          <div class="label">When</div>
-          <div class="value">September 16–18, 2026</div>
+      <div class="hero-details">
+        <div class="hero-detail-row">
+          <div class="hero-detail-icon">&#9670;</div>
+          <div class="hero-detail-text">
+            <div class="label">When</div>
+            <div class="value">September 16–18, 2026</div>
+          </div>
+        </div>
+        <div class="hero-detail-row">
+          <div class="hero-detail-icon">&#9670;</div>
+          <div class="hero-detail-text">
+            <div class="label">Where</div>
+            <div class="value">Fort Worth, TX</div>
+          </div>
+        </div>
+        <div class="hero-detail-row">
+          <div class="hero-detail-icon">&#9670;</div>
+          <div class="hero-detail-text">
+            <div class="label">Capacity</div>
+            <div class="value">300 Seats Only</div>
+          </div>
         </div>
       </div>
-      <div class="hero-detail-row">
-        <div class="hero-detail-icon">&#9670;</div>
-        <div class="hero-detail-text">
-          <div class="label">Where</div>
-          <div class="value">Fort Worth, TX</div>
-        </div>
+      <div class="hero-cta-row">
+        <a href="#pricing" class="btn-primary">Get Your Ticket</a>
+        <a href="#value" class="btn-ghost">See What You'll Get &darr;</a>
       </div>
-      <div class="hero-detail-row">
-        <div class="hero-detail-icon">&#9670;</div>
-        <div class="hero-detail-text">
-          <div class="label">Capacity</div>
-          <div class="value">300 Seats Only</div>
-        </div>
-      </div>
-      <a href="#pricing" class="btn-primary">Get Your Ticket</a>
-      <a href="#value" class="btn-ghost">See What You'll Get &darr;</a>
     </div>
   </div>
 </section>
