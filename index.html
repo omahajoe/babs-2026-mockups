@@ -791,6 +791,23 @@
     background: var(--off-white);
     position: relative;
   }
+  .seats-badge {
+    background: var(--champion-red);
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: -32px -32px 20px -32px;
+    border-radius: 8px 8px 0 0;
+  }
+  .seats-badge.sold-out {
+    background: var(--charcoal);
+    color: var(--silver);
+  }
   .pricing-header { text-align: center; margin-bottom: 72px; }
   .pricing-header .section-label { justify-content: center; }
   .pricing-header .section-title { margin-left: auto; margin-right: auto; }
@@ -1078,7 +1095,7 @@
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge reveal">7th Annual &bull; 300 Business Owners &bull; Fort Worth, TX</div>
-      <h1 class="reveal reveal-delay-1">Champions<br>Don't <span class="accent-italic">Play Safe.</span></h1>
+      <h1 class="reveal reveal-delay-1">Champions<br><span class="accent-italic">Don't Play Safe.</span></h1>
       <p class="hero-sub reveal reveal-delay-2">Three days with 300 business owners who build real companies, share what they know, and hold each other to a higher standard. Visibility. Partnerships. Habits. That's what this room runs on.<br><br><em style="color:rgba(255,255,255,0.4); font-size:14px;">Not corporate. Not woo-woo. Not bro-culture. Something else entirely.</em></p>
     </div>
     <div class="hero-sidebar reveal reveal-delay-3">
@@ -1271,8 +1288,8 @@
     <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Speakers Who've Built What You're <span class="italic-accent">Building.</span></h2>
     <p class="section-desc reveal reveal-delay-2" style="color: rgba(255,255,255,0.55); margin: 0 auto 48px; text-align: center;">No keynote circuit regulars. Every speaker was chosen because they're in the trenches building companies, not because they're good at talking about it. Every session ties back to visibility, partnerships, or habits. No filler.</p>
     <div class="reveal reveal-delay-3" style="max-width: 700px; margin: 0 auto; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <blockquote style="font-family: 'Oswald', sans-serif; font-style: italic; font-size: clamp(22px, 3vw, 36px); line-height: 1.4; color: var(--white); margin: 0 0 16px; font-weight: 400;">"Every single speaker, session, panel, activity was relevant and impactful."</blockquote>
-      <cite style="font-family: 'Inter', sans-serif; font-style: normal; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600;">— 2025 Summit Attendee</cite>
+      <blockquote style="font-family: 'Oswald', sans-serif; font-style: italic; font-size: clamp(22px, 3vw, 36px); line-height: 1.4; color: var(--white); margin: 0 0 16px; font-weight: 400;">"No matter your stage in business, you walk away with actionable, meaningful insights that truly make an impact."</blockquote>
+      <cite style="font-family: 'Inter', sans-serif; font-style: normal; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600;">— Bernie DeSantis</cite>
     </div>
   </div>
 </section>
@@ -1340,23 +1357,27 @@
           <span class="testimonial-code-badge">Built for Monday-Morning Execution</span>
         </div>
         <div class="testimonial-feature reveal" style="margin-top:32px; border-left-color: var(--charcoal);">
-          <blockquote>"The overall atmosphere was cited as the #1 favorite part by 11 of 26 respondents."</blockquote>
-          <cite>— 2025 Post-Summit Survey</cite><br>
+          <blockquote>"This summit connects you with people who genuinely want to connect — it's a unique community unlike any networking group I've experienced."</blockquote>
+          <cite>— Annette Walters</cite><br>
           <span class="testimonial-code-badge">The Code Creates the Atmosphere</span>
         </div>
       </div>
       <div class="testimonial-stack">
         <div class="testimonial-card reveal">
-          <blockquote>"The energy of people who truly want to help each other grow their businesses. You can't help but WANT to be a part of it!"</blockquote>
-          <cite>— 2025 Summit Attendee</cite>
+          <blockquote>"The networking here is powerful — you're surrounded by people who share ideas and help you take your business to the next level."</blockquote>
+          <cite>— Jeffrey Casanova</cite>
         </div>
         <div class="testimonial-card reveal reveal-delay-1">
-          <blockquote>"High-quality people making the networking great."</blockquote>
-          <cite>— 2025 Summit Attendee</cite>
+          <blockquote>"They help you clearly identify what you should and shouldn't be doing, giving you the focus needed to truly grow your business."</blockquote>
+          <cite>— Kevin Turner</cite>
         </div>
         <div class="testimonial-card reveal reveal-delay-2">
-          <blockquote>"I left with a plan I actually executed — and the people to hold me to it."</blockquote>
-          <cite>— 2025 Summit Attendee</cite>
+          <blockquote>"This summit pushed me to stop making excuses, get uncomfortable, and take action on the things I've been avoiding in my business."</blockquote>
+          <cite>— Sean</cite>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <blockquote>"I learned so much about myself through the tools and systems shared here. I truly believe anyone attending will gain real value."</blockquote>
+          <cite>— Mario Robles</cite>
         </div>
       </div>
     </div>
@@ -1390,7 +1411,8 @@
       </div>
 
       <div class="price-card featured reveal reveal-delay-1">
-        <div style="background: var(--champion-red); color: #fff; text-align: center; padding: 8px 0; font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: -32px -32px 20px -32px; border-radius: 8px 8px 0 0;">Only 10 VIP Seats Left</div>
+        <!-- WEEKLY UPDATE: edit the number below. When it hits 0, change "Only X VIP Seats Left" to "VIP Sold Out" and add the class "sold-out" to the div. -->
+        <div class="seats-badge">Only 10 VIP Seats Left</div>
         <div class="price-tier">VIP Admission</div>
         <div class="price-amount">$1,097</div>
         <div class="price-term">The Inner Circle</div>
