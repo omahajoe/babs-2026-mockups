@@ -155,8 +155,8 @@
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 0 0 0;
+    justify-content: center;
+    padding: 0;
     position: relative;
     background: var(--black);
     margin-top: 64px;
@@ -179,22 +179,25 @@
   .hero-inner {
     position: relative; z-index: 2;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    gap: 80px;
     max-width: 1320px;
     margin: 0 auto;
     padding: 80px 64px;
     width: 100%;
   }
-  .hero-content { padding-bottom: 20px; }
+  .hero-content {
+    flex: 1 1 auto;
+    text-align: left;
+    min-width: 0;
+  }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 12px;
     font-size: 11px; font-weight: 600;
     letter-spacing: 3px; text-transform: uppercase;
     color: rgba(255,255,255,0.5);
     margin-bottom: 32px;
-    justify-content: center;
   }
   .hero-badge::before,
   .hero-badge::after {
@@ -228,7 +231,6 @@
     max-width: 640px;
     line-height: 1.85;
     font-weight: 300;
-    margin: 0 auto;
   }
   .hero-sidebar {
     background: rgba(255,255,255,0.06);
@@ -236,6 +238,7 @@
     border: 1px solid rgba(255,255,255,0.08);
     padding: 40px 36px;
     display: flex; flex-direction: column; gap: 28px;
+    flex: 0 0 360px;
   }
   .hero-detail-row {
     display: flex; align-items: center; gap: 16px;
@@ -315,7 +318,7 @@
     background: var(--white);
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid var(--silver);
   }
   .proof-stat {
@@ -1062,8 +1065,16 @@
 
   /* ========== RESPONSIVE ========== */
   @media (max-width: 1024px) {
-    .hero-inner { padding: 0 40px 60px; }
-    .hero-sidebar { max-width: 400px; }
+    .hero-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+      padding: 60px 40px;
+    }
+    .hero-content { text-align: center; flex: 1 1 auto; }
+    .hero-sidebar { flex: 0 0 auto; width: 100%; max-width: 480px; }
+    .hero-sub { margin: 0 auto; }
     .value-header { grid-template-columns: 1fr; gap: 40px; }
     .value-header-image { height: 280px; }
     .code-inner { grid-template-columns: 1fr; }
@@ -1079,8 +1090,6 @@
     nav { padding: 0 20px; }
     .nav-links { display: none; }
     .value-section, .who-section, .testimonial-section, .pricing-section { padding: 80px 24px; }
-    .proof-bar { grid-template-columns: repeat(2, 1fr); }
-    .proof-stat:nth-child(2)::after { display: none; }
     .pillar-grid { grid-template-columns: 1fr; }
     .ecosystem-strip { padding: 60px 24px; }
     .who-sticky { grid-template-columns: 1fr; }
@@ -1089,7 +1098,10 @@
     .code-left { padding: 80px 24px; }
     .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
     .testimonial-layout { grid-template-columns: 1fr; }
-    .hero-inner { padding: 0 24px 48px; }
+    .hero-inner { padding: 48px 24px; }
+    .proof-bar { grid-template-columns: 1fr; }
+    .proof-stat:not(:last-child)::after { display: none; }
+    .proof-stat:not(:last-child) { border-bottom: 1px solid var(--silver); }
     .hero h1 { font-size: clamp(48px, 12vw, 80px); }
     .photo-break { grid-template-columns: 1fr; height: auto; }
     .photo-break-item { height: 200px; }
@@ -1166,10 +1178,6 @@
     <div class="label">Word of Mouth</div>
   </div>
   <div class="proof-stat reveal reveal-delay-2">
-    <div class="number"><span class="counter" data-target="0">0</span></div>
-    <div class="label">Negative Ratings</div>
-  </div>
-  <div class="proof-stat reveal reveal-delay-3">
     <div class="number"><span class="counter" data-target="7">0</span></div>
     <div class="label">Years Running</div>
   </div>
