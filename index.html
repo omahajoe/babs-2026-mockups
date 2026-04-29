@@ -976,20 +976,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 72px;
     margin-top: 48px;
     flex-wrap: wrap;
   }
   .sponsor-logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 14px; font-weight: 500;
-    color: var(--light-gray);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.5;
+    height: 80px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.65;
     transition: all 0.3s;
   }
-  .sponsor-logo:hover { opacity: 1; color: var(--black); }
+  .sponsor-logo:hover { filter: grayscale(0%); opacity: 1; }
 
   /* ========== FINAL CTA ========== */
   .final-cta {
@@ -1492,9 +1492,9 @@
     <h2 class="section-title reveal" style="text-align:center;">Backed by Builders Who Walk the <span class="italic-accent">Walk.</span></h2>
 
     <div class="sponsor-row reveal">
-      <div class="sponsor-logo">YorCMO</div>
-      <div class="sponsor-logo">Go High Level</div>
-      <div class="sponsor-logo">Storyteller Promotions</div>
+      <img src="images/yorcmo-logo.png" alt="YorCMO" class="sponsor-logo">
+      <img src="images/gohighlevel.svg" alt="Go High Level" class="sponsor-logo">
+      <img src="images/storytellerlogo.png" alt="Storyteller Promotions" class="sponsor-logo">
     </div>
 
     <div style="margin-top:56px;" class="reveal">
