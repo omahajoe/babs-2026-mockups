@@ -765,6 +765,22 @@
     margin-top: 72px;
     align-items: start;
   }
+  .testimonial-attribution {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .testimonial-photo {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 25%;
+    flex-shrink: 0;
+    background: var(--silver);
+  }
+  .testimonial-feature .testimonial-photo { width: 56px; height: 56px; }
+  .testimonial-attribution cite { margin: 0; }
   .testimonial-feature {
     background: var(--off-white);
     padding: 56px 48px;
@@ -1335,7 +1351,10 @@
     <p class="section-desc reveal reveal-delay-2" style="color: rgba(255,255,255,0.55); margin: 0 auto 48px; text-align: center;">No keynote circuit regulars. Every speaker was chosen because they're in the trenches building companies, not because they're good at talking about it. Every session ties back to visibility, partnerships, or habits. No filler.</p>
     <div class="reveal reveal-delay-3" style="max-width: 700px; margin: 0 auto; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
       <blockquote style="font-family: 'Oswald', sans-serif; font-style: italic; font-size: clamp(22px, 3vw, 36px); line-height: 1.4; color: var(--white); margin: 0 0 16px; font-weight: 400;">"No matter your stage in business, you walk away with actionable, meaningful insights that truly make an impact."</blockquote>
-      <cite style="font-family: 'Inter', sans-serif; font-style: normal; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600;">— Bernie DeSantis —</cite>
+      <div class="testimonial-attribution" style="justify-content: center;">
+        <img class="testimonial-photo" src="images/bernie-desantis.png" alt="Bernie DeSantis">
+        <cite style="font-family: 'Inter', sans-serif; font-style: normal; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600;">— Bernie DeSantis —</cite>
+      </div>
     </div>
   </div>
 </section>
@@ -1411,26 +1430,41 @@
         </div>
         <div class="testimonial-feature reveal" style="margin-top:32px; border-left-color: var(--charcoal);">
           <blockquote>"This summit connects you with people who genuinely want to connect — it's a unique community unlike any networking group I've experienced."</blockquote>
-          <cite>— Annette Walters</cite><br>
-          <span class="testimonial-code-badge">The Code Creates the Atmosphere</span>
+          <div class="testimonial-attribution">
+            <img class="testimonial-photo" src="images/annette-walters.jpg" alt="Annette Walters">
+            <cite>— Annette Walters</cite>
+          </div>
+          <span class="testimonial-code-badge" style="margin-top:16px;">The Code Creates the Atmosphere</span>
         </div>
       </div>
       <div class="testimonial-stack">
         <div class="testimonial-card reveal">
           <blockquote>"The networking here is powerful — you're surrounded by people who share ideas and help you take your business to the next level."</blockquote>
-          <cite>— Jeffrey Casanova</cite>
+          <div class="testimonial-attribution">
+            <img class="testimonial-photo" src="images/jeffrey-casanova.png" alt="Jeffrey Casanova">
+            <cite>— Jeffrey Casanova</cite>
+          </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-1">
           <blockquote>"They help you clearly identify what you should and shouldn't be doing, giving you the focus needed to truly grow your business."</blockquote>
-          <cite>— Kevin Turner</cite>
+          <div class="testimonial-attribution">
+            <img class="testimonial-photo" src="images/kevin-turner.png" alt="Kevin Turner">
+            <cite>— Kevin Turner</cite>
+          </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-2">
           <blockquote>"This summit pushed me to stop making excuses, get uncomfortable, and take action on the things I've been avoiding in my business."</blockquote>
-          <cite>— Sean</cite>
+          <div class="testimonial-attribution">
+            <img class="testimonial-photo" src="images/sean.png" alt="Sean">
+            <cite>— Sean</cite>
+          </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-3">
           <blockquote>"I learned so much about myself through the tools and systems shared here. I truly believe anyone attending will gain real value."</blockquote>
-          <cite>— Mario Robles</cite>
+          <div class="testimonial-attribution">
+            <img class="testimonial-photo" src="images/mario-robles.png" alt="Mario Robles">
+            <cite>— Mario Robles</cite>
+          </div>
         </div>
       </div>
     </div>
