@@ -238,6 +238,42 @@
     margin: 0 auto;
   }
 
+  /* ========== PHOTO BREAKS ========== */
+  .photo-break {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4px;
+    height: 360px;
+  }
+  .photo-break.reverse {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .photo-break-item {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-break-item::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(10,10,10,0.15);
+    transition: background 0.4s;
+  }
+  .photo-break-item:hover::after { background: rgba(10,10,10,0); }
+
+  .full-photo {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .full-photo::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(10,10,10,0.1);
+  }
+
   /* ========== SPONSOR TIERS ========== */
   .tier-section {
     padding: 100px 64px;
@@ -490,6 +526,10 @@
     .tier-section { padding: 80px 24px; }
     .sponsor-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
     .sponsor-grid.large { grid-template-columns: 1fr; max-width: 400px; }
+    .photo-break { grid-template-columns: 1fr; height: auto; }
+    .photo-break.reverse { grid-template-columns: 1fr; }
+    .photo-break-item { height: 200px; }
+    .full-photo { height: 220px; }
     .sponsor-cta { padding: 100px 24px; }
     .sponsor-cta-stats { gap: 40px; }
     footer { grid-template-columns: 1fr; padding: 48px 24px; }
@@ -523,6 +563,13 @@
   </div>
 </section>
 
+<!-- PHOTO BREAK — post-hero -->
+<div class="photo-break">
+  <div class="photo-break-item" role="img" aria-label="Attendees celebrating at the Badass Business Summit" style="background-image:url('images/audience1.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Roundtable discussion at the summit" style="background-image:url('images/audience2.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Networking between sessions" style="background-image:url('images/audience3.jpg')"></div>
+</div>
+
 <!-- DIAMOND TIER -->
 <section class="tier-section">
   <div class="container">
@@ -554,6 +601,13 @@
     </div>
   </div>
 </section>
+
+<!-- PHOTO BREAK — between Diamond and Gold -->
+<div class="photo-break reverse">
+  <div class="photo-break-item" role="img" aria-label="Speaker on main stage at the summit" style="background-image:url('images/photo-break-1.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Attendees engaged in breakout session" style="background-image:url('images/photo-break-2.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Business owners connecting at the summit" style="background-image:url('images/photo-break-3.jpg')"></div>
+</div>
 
 <!-- GOLD TIER -->
 <section class="tier-section alt-bg">
@@ -619,9 +673,13 @@
   </div>
 </section>
 
+<!-- FULL-WIDTH EVENT PHOTO -->
+<div class="full-photo" role="img" aria-label="Packed audience at the Badass Business Summit main stage" style="background-image:url('images/value-header.jpg')"></div>
+
 <!-- BECOME A SPONSOR CTA -->
 <section class="sponsor-cta">
-  <div class="container reveal">
+  <div class="sponsor-cta-bg" style="position:absolute;inset:0;background:url('images/urgency-bg.jpg') center/cover no-repeat;opacity:0.08;"></div>
+  <div class="container reveal" style="position:relative;z-index:2;">
     <div class="section-label" style="justify-content:center;">Sponsorship</div>
     <h2 class="section-title">Put Your Brand in Front of 300 <span class="italic-accent">Badass</span> Business Owners</h2>
     <p>This isn't a logo on a lanyard. This is three days of direct access to decision-makers who are actively investing in their businesses.</p>
