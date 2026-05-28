@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venue &amp; Hotel | 2026 Badass Business Summit — Fort Worth, TX</title>
+<meta name="description" content="The 2026 Badass Business Summit is hosted at Four Points by Sheraton Dallas Fort Worth Airport North in Coppell, TX. Group rate $125/night with breakfast included. Sept 16–18, 2026.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://badassbusinesssummit.com/venue.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Venue & Hotel | 2026 Badass Business Summit">
+<meta property="og:description" content="Four Points by Sheraton Dallas Fort Worth Airport North. Group rate $125/night with breakfast. Sept 16–18, 2026.">
+<meta property="og:image" content="https://badassbusinesssummit.com/images/hero-bg.jpg">
+<meta property="og:url" content="https://badassbusinesssummit.com/venue.html">
+<meta property="og:site_name" content="Badass Business Summit">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --champion-red: #E31B23;
+    --dark-red: #B81620;
+    --deep-red: #8B1117;
+    --black: #0A0A0A;
+    --near-black: #141414;
+    --charcoal: #2A2A2A;
+    --mid-gray: #5A5A5A;
+    --light-gray: #999999;
+    --silver: #D8D8D8;
+    --off-white: #F5F4F0;
+    --warm-white: #FAF9F6;
+    --cream: #F0EDE6;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Utility */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ========== NAVIGATION ========== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 0 48px;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.95);
+    border-bottom-color: rgba(255,255,255,0.06);
+  }
+  nav.scrolled .nav-links a { color: rgba(255,255,255,0.5); }
+  nav.scrolled .nav-links a:hover { color: var(--white); }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 36px; width: auto; display: block; }
+  .nav-logo .nav-logo-dark { display: none; }
+  nav.scrolled .nav-logo .nav-logo-light { display: none; }
+  nav.scrolled .nav-logo .nav-logo-dark { display: block; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--mid-gray); text-decoration: none;
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-links a.active { color: var(--champion-red); }
+  nav.scrolled .nav-links a.active { color: var(--champion-red); }
+  .nav-cta {
+    background: var(--champion-red) !important;
+    color: var(--white) !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+    letter-spacing: 2px;
+    border: none; cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--dark-red) !important; transform: scale(1.03); }
+
+  /* ========== BUTTONS ========== */
+  .btn-primary {
+    display: inline-block;
+    background: var(--champion-red);
+    color: var(--white);
+    padding: 18px 48px;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    border: none; cursor: pointer;
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+  .btn-primary:hover::before { transform: translateX(100%); }
+  .btn-primary:hover { background: var(--dark-red); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(227,27,35,0.3); }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--black);
+    padding: 18px 48px;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--black);
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .btn-outline:hover { background: var(--black); color: var(--white); }
+
+  /* ========== SECTION STYLES ========== */
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--champion-red);
+    margin-bottom: 20px;
+  }
+  .section-label::before,
+  .section-label::after {
+    content: ''; width: 24px; height: 2px;
+    background: var(--champion-red);
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 700; line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+  .section-title .red-accent { color: var(--champion-red); }
+  .section-title .italic-accent { font-style: italic; color: var(--champion-red); }
+
+  /* ========== PAGE HERO ========== */
+  .page-hero {
+    padding: 160px 64px 100px;
+    background: var(--black);
+    text-align: center;
+    position: relative;
+    margin-top: 64px;
+    overflow: hidden;
+  }
+  .page-hero-bg {
+    position: absolute; inset: 0;
+    background: url('images/hero-bg.jpg') center center / cover no-repeat;
+    opacity: 0.2;
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 100%);
+    pointer-events: none;
+  }
+  .page-hero-inner {
+    position: relative; z-index: 2;
+    max-width: 800px; margin: 0 auto;
+  }
+  .page-hero .section-label {
+    color: rgba(255,255,255,0.35);
+    justify-content: center;
+  }
+  .page-hero .section-label::before,
+  .page-hero .section-label::after { background: rgba(255,255,255,0.15); }
+  .page-hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 700; line-height: 0.95;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+  .page-hero h1 .italic-accent { font-style: italic; color: var(--champion-red); }
+  .page-hero p {
+    font-size: 17px; color: rgba(255,255,255,0.55);
+    line-height: 1.85; font-weight: 300;
+    max-width: 600px; margin: 0 auto;
+  }
+
+  /* ========== PHOTO BREAKS ========== */
+  .photo-break {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4px;
+    height: 360px;
+  }
+  .photo-break.reverse { grid-template-columns: 1fr 1fr 2fr; }
+  .photo-break-item {
+    background-size: cover;
+    background-position: center;
+    position: relative; overflow: hidden;
+  }
+  .photo-break-item::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(10,10,10,0.15);
+    transition: background 0.4s;
+  }
+  .photo-break-item:hover::after { background: rgba(10,10,10,0); }
+
+  /* ========== VENUE DETAILS ========== */
+  .venue-section {
+    padding: 100px 64px;
+  }
+  .venue-section.alt-bg {
+    background: var(--off-white);
+  }
+  .venue-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .venue-content h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .venue-content p {
+    font-size: 16px;
+    color: var(--mid-gray);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .venue-content p strong {
+    color: var(--black);
+    font-weight: 600;
+  }
+
+  .venue-detail-card {
+    background: var(--white);
+    border: 1px solid var(--silver);
+    padding: 32px;
+    margin-bottom: 24px;
+    transition: all 0.3s;
+  }
+  .alt-bg .venue-detail-card {
+    background: var(--white);
+  }
+  .venue-detail-card:hover {
+    border-color: var(--light-gray);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  }
+  .venue-detail-card .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--champion-red);
+    margin-bottom: 12px;
+  }
+  .venue-detail-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .venue-detail-card p {
+    font-size: 15px;
+    color: var(--mid-gray);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+  .venue-detail-card p:last-child { margin-bottom: 0; }
+  .venue-detail-card .highlight {
+    display: inline-block;
+    background: var(--off-white);
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--charcoal);
+    margin-top: 8px;
+  }
+  .alt-bg .venue-detail-card .highlight {
+    background: var(--cream);
+  }
+
+  .venue-detail-card a {
+    color: var(--champion-red);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .venue-detail-card a:hover { color: var(--dark-red); }
+
+  /* Map */
+  .map-container {
+    width: 100%;
+    height: 400px;
+    border: 1px solid var(--silver);
+    background: var(--off-white);
+  }
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Quick facts strip */
+  .facts-strip {
+    background: var(--black);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+  }
+  .fact-item {
+    padding: 56px 24px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .fact-item:not(:last-child)::after {
+    content: '';
+    position: absolute; right: 0; top: 20%; bottom: 20%;
+    width: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .fact-item:hover { background: rgba(255,255,255,0.03); }
+  .fact-item .fact-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .fact-item .fact-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .fact-item .fact-value span { color: var(--champion-red); }
+  .fact-item .fact-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ========== CTA SECTION ========== */
+  .venue-cta {
+    padding: 140px 64px;
+    background: var(--black);
+    text-align: center;
+    position: relative;
+  }
+  .venue-cta-bg {
+    position: absolute; inset: 0;
+    background: url('images/urgency-bg.jpg') center/cover no-repeat;
+    opacity: 0.08;
+  }
+  .venue-cta-inner {
+    position: relative; z-index: 2;
+  }
+  .venue-cta .section-label {
+    color: rgba(255,255,255,0.35);
+    justify-content: center;
+  }
+  .venue-cta .section-label::before,
+  .venue-cta .section-label::after { background: rgba(255,255,255,0.15); }
+  .venue-cta .section-title {
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto 24px;
+  }
+  .venue-cta p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.5);
+    max-width: 560px;
+    margin: 0 auto 48px;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--black);
+    padding: 64px 64px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: start;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-logo { height: 56px; width: auto; display: block; margin-bottom: 12px; }
+  .footer-tagline {
+    font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 24px;
+  }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.12); }
+  .footer-links {
+    display: flex; gap: 28px; flex-wrap: wrap; padding-top: 4px;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1024px) {
+    .venue-layout { grid-template-columns: 1fr; gap: 48px; }
+    .facts-strip { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .page-hero { padding: 120px 24px 80px; }
+    .venue-section { padding: 80px 24px; }
+    .photo-break { grid-template-columns: 1fr; height: auto; }
+    .photo-break.reverse { grid-template-columns: 1fr; }
+    .photo-break-item { height: 200px; }
+    .facts-strip { grid-template-columns: 1fr 1fr; }
+    .fact-item { padding: 40px 20px; }
+    .fact-item:not(:last-child)::after { display: none; }
+    .map-container { height: 300px; }
+    .venue-cta { padding: 100px 24px; }
+    footer { grid-template-columns: 1fr; padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo" aria-label="Badass Business Summit — home">
+    <img src="images/babs-logo.png" alt="Badass Business Summit" class="nav-logo-light">
+    <img src="images/babs-logo-white.png" alt="" aria-hidden="true" class="nav-logo-dark">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#pricing">Tickets</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="venue.html" class="active">Venue</a>
+    <a class="nav-cta" href="index.html#pricing">Get Your Ticket</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner reveal">
+    <div class="section-label" style="justify-content:center;">The Venue</div>
+    <h1>Where Champions <span class="italic-accent">Show Up.</span></h1>
+    <p>Three days. One room. A venue built for real business, not ballroom small talk. Here's everything you need to plan your trip.</p>
+  </div>
+</section>
+
+<!-- PHOTO BREAK -->
+<div class="photo-break">
+  <div class="photo-break-item" role="img" aria-label="Attendees at the Badass Business Summit" style="background-image:url('images/audience1.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Roundtable discussion" style="background-image:url('images/audience2.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Networking between sessions" style="background-image:url('images/audience3.jpg')"></div>
+</div>
+
+<!-- VENUE OVERVIEW -->
+<section class="venue-section">
+  <div class="container">
+    <div class="venue-layout">
+      <div class="venue-content reveal">
+        <div class="section-label">Event Home</div>
+        <h2 class="section-title">Four Points by <span class="italic-accent">Sheraton</span></h2>
+        <p>The 2026 Badass Business Summit takes over the Four Points by Sheraton Dallas Fort Worth Airport North for three full days. Everything happens under one roof — main stage sessions, breakout rooms, networking, and after-hours events.</p>
+        <p><strong>No shuttles. No splitting the group across venues.</strong> You walk out of your room and you're in the action. That's by design.</p>
+
+        <div class="venue-detail-card" style="margin-top:32px;">
+          <div class="card-label">Address</div>
+          <h4>1580 Point West Blvd</h4>
+          <p>Coppell, TX 75019</p>
+          <p>Phone: <a href="tel:4697026311">(469) 702-6311</a></p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5!2d-97.0101!3d32.9672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c2b5e6e5b8a87%3A0x8b8e8e7f1d5e3c0!2sFour+Points+by+Sheraton+Dallas+Fort+Worth+Airport+North!5e0!3m2!1sen!2sus!4v1717000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Four Points by Sheraton Dallas Fort Worth Airport North map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK FACTS STRIP -->
+<div class="facts-strip">
+  <div class="fact-item reveal">
+    <span class="fact-icon">&#9992;</span>
+    <div class="fact-value"><span>5</span> Min</div>
+    <div class="fact-label">From DFW Airport</div>
+  </div>
+  <div class="fact-item reveal reveal-delay-1">
+    <span class="fact-icon">&#127952;</span>
+    <div class="fact-value"><span>$125</span>/Night</div>
+    <div class="fact-label">Group Rate</div>
+  </div>
+  <div class="fact-item reveal reveal-delay-2">
+    <span class="fact-icon">&#9749;</span>
+    <div class="fact-value">Breakfast <span>Included</span></div>
+    <div class="fact-label">Every Morning</div>
+  </div>
+  <div class="fact-item reveal reveal-delay-3">
+    <span class="fact-icon">&#128663;</span>
+    <div class="fact-value">Free <span>Parking</span></div>
+    <div class="fact-label">On-Site</div>
+  </div>
+</div>
+
+<!-- HOTEL BLOCK -->
+<section class="venue-section alt-bg">
+  <div class="container">
+    <div class="venue-layout">
+      <div class="venue-content reveal">
+        <div class="section-label">Stay Where It Happens</div>
+        <h2 class="section-title">The Hotel <span class="italic-accent">Block</span></h2>
+        <p>We've secured a group rate at the host hotel so you can stay where the action is. Breakfast is included every morning, and on-site parking is free.</p>
+        <p><strong>Book early.</strong> The block fills up, and once it's gone you're on your own for nearby hotels. The reservation cutoff is August 16, 2026 — don't wait.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="venue-detail-card">
+          <div class="card-label">Group Rate</div>
+          <h4>$125 / Night</h4>
+          <p>Run of house — breakfast included every morning.</p>
+          <div class="highlight">Book by August 16, 2026</div>
+        </div>
+
+        <div class="venue-detail-card">
+          <div class="card-label">How to Book</div>
+          <h4>Call to Reserve</h4>
+          <p>Call <a href="tel:18669121027">1-866-912-1027</a> and mention the <strong>Badass Business Summit</strong> group block to get the $125/night rate.</p>
+          <p>A direct booking link is coming soon — we'll update this page when it's ready.</p>
+        </div>
+
+        <div class="venue-detail-card">
+          <div class="card-label">What's Included</div>
+          <h4>The Essentials</h4>
+          <p><strong>Complimentary breakfast</strong> every morning</p>
+          <p><strong>Free on-site parking</strong></p>
+          <p><strong>All summit events</strong> under one roof — no commute, no shuttles</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK -->
+<div class="photo-break reverse">
+  <div class="photo-break-item" role="img" aria-label="Speaker on stage" style="background-image:url('images/photo-break-1.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Breakout session" style="background-image:url('images/photo-break-2.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Business owners connecting" style="background-image:url('images/photo-break-3.jpg')"></div>
+</div>
+
+<!-- GETTING THERE -->
+<section class="venue-section">
+  <div class="container">
+    <div class="venue-layout">
+      <div class="venue-content reveal">
+        <div class="section-label">Getting There</div>
+        <h2 class="section-title">Travel <span class="italic-accent">Details</span></h2>
+        <p>The hotel sits right off Highway 121 in Coppell, TX — minutes from DFW International Airport and easy to reach from anywhere in the Metroplex.</p>
+        <p>Whether you're flying in or driving, you'll spend your time in the room — not in traffic.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="venue-detail-card">
+          <div class="card-label">By Air</div>
+          <h4>DFW International Airport</h4>
+          <p>About <strong>5 minutes</strong> from the hotel. Grab a rideshare or rental car — you'll be checked in before your carry-on cools off.</p>
+          <p>Dallas Love Field (DAL) is about <strong>20 minutes</strong> away if you're flying Southwest.</p>
+        </div>
+
+        <div class="venue-detail-card">
+          <div class="card-label">By Car</div>
+          <h4>On-Site Parking</h4>
+          <p><strong>Free parking</strong> at the hotel. No garage fees, no valet headaches. Pull in, park, and you're good for three days.</p>
+          <p>Located right off <strong>Highway 121</strong> — easy access from I-35E, I-635, and the DFW Connector.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="venue-cta">
+  <div class="venue-cta-bg"></div>
+  <div class="venue-cta-inner container reveal">
+    <div class="section-label" style="justify-content:center;">September 16–18, 2026</div>
+    <h2 class="section-title">The Room Is <span class="italic-accent">Waiting.</span></h2>
+    <p>300 seats. Three days. One venue. Lock your ticket, book your room, and show up ready.</p>
+    <a href="index.html#pricing" class="btn-primary">Get Your Ticket</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="images/babs-logo-white.png" alt="Badass Business Summit" class="footer-logo">
+    <div class="footer-tagline">Real Business. Real People. Real Results.</div>
+    <p class="footer-copy">&copy; 2026 Success Champions Networking. All rights reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="https://badassbusinesssummit.com/badass-bussiness-summit-event-schedule/" target="_blank" rel="noopener">Schedule</a>
+    <a href="index.html#speakers">Speakers</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="venue.html">Venue</a>
+    <a href="https://badassbusinesssummit.com/contact-us/" target="_blank" rel="noopener">Contact</a>
+    <a href="https://go.badassbusinesssummit.com/order-form" target="_blank" rel="noopener">Buy Ticket</a>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Nav scroll effect
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+</script>
+</body>
+</html>
