@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCN Member Pricing — Badass Business Summit 2026</title>
+<meta name="description" content="Your SCN member ticket to the Badass Business Summit. $100 off public pricing. 7-day window.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Your SCN Member Ticket — BABs 2026">
+<meta property="og:description" content="$497 member pricing. $100 off public. 7-day window. Sept 16-18, Fort Worth.">
+<meta property="og:image" content="https://badassbusinesssummit.com/images/hero-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0d0d0f;
+    --bg-2:      #161619;
+    --bg-3:      #1f1f24;
+    --ink:       #f5f5f3;
+    --ink-dim:   #a8a8a8;
+    --accent:    #d6371f;   /* warm BABS red */
+    --accent-2:  #ff5436;
+    --line:      #2c2c32;
+    --good:      #3ecf8e;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--bg); color:var(--ink);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 24px; }
+  a { color:inherit; text-decoration:none; }
+
+  /* ---- Top member banner ---- */
+  .memberbar {
+    background:var(--accent); color:#fff; text-align:center;
+    font-weight:700; font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+    padding:10px 16px;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    display:inline-block; background:var(--accent); color:#fff;
+    font-weight:800; font-size:18px; letter-spacing:.01em;
+    padding:18px 38px; border-radius:6px; border:none; cursor:pointer;
+    transition:transform .12s ease, background .2s ease;
+    text-transform:uppercase;
+  }
+  .btn:hover { background:var(--accent-2); transform:translateY(-2px); }
+  .btn-sub { display:block; margin-top:12px; font-size:13px; color:var(--ink-dim); font-weight:500; letter-spacing:.02em; }
+
+  /* ---- Hero ---- */
+  .hero {
+    background:linear-gradient(180deg, rgba(13,13,15,.78), rgba(13,13,15,.94)), url('https://badassbusinesssummit.com/images/hero-bg.jpg') center/cover no-repeat;
+    text-align:center; padding:84px 0 72px;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow {
+    color:var(--accent-2); font-weight:800; font-size:13px;
+    letter-spacing:.2em; text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero h1 {
+    font-size:clamp(34px, 6vw, 60px); font-weight:900; line-height:1.04;
+    letter-spacing:-.02em; margin-bottom:20px;
+  }
+  .hero h1 .hl { color:var(--accent-2); }
+  .hero p.sub {
+    font-size:clamp(17px,2.4vw,21px); color:var(--ink-dim);
+    max-width:660px; margin:0 auto 34px;
+  }
+
+  /* ---- Countdown ---- */
+  .countdown-wrap { background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:40px 0; text-align:center; }
+  .countdown-label { font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:18px; font-weight:700; }
+  .countdown { display:flex; justify-content:center; gap:18px; }
+  .cd-unit { background:var(--bg-3); border:1px solid var(--line); border-radius:8px; padding:16px 10px; min-width:84px; }
+  .cd-num { font-size:clamp(30px,5vw,46px); font-weight:900; line-height:1; color:#fff; font-variant-numeric:tabular-nums; }
+  .cd-lbl { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim); margin-top:8px; }
+  .countdown-foot { margin-top:18px; font-size:13px; color:var(--ink-dim); }
+
+  /* ---- Sections ---- */
+  section { padding:72px 0; border-bottom:1px solid var(--line); }
+  .kicker { color:var(--accent-2); font-weight:800; font-size:12px; letter-spacing:.2em; text-transform:uppercase; text-align:center; margin-bottom:14px; }
+  h2.section-title { font-size:clamp(26px,4vw,40px); font-weight:900; text-align:center; letter-spacing:-.02em; margin-bottom:14px; }
+  .section-intro { text-align:center; color:var(--ink-dim); max-width:640px; margin:0 auto 44px; font-size:17px; }
+
+  /* ---- Price block ---- */
+  .price-card { background:var(--bg-2); border:1px solid var(--line); border-radius:14px; padding:40px; max-width:620px; margin:0 auto; text-align:center; }
+  .price-row { display:flex; justify-content:center; align-items:baseline; gap:18px; margin-bottom:8px; }
+  .price-old { font-size:26px; color:var(--ink-dim); text-decoration:line-through; font-weight:600; }
+  .price-new { font-size:64px; font-weight:900; color:#fff; line-height:1; }
+  .price-save { display:inline-block; background:rgba(62,207,142,.12); color:var(--good); font-weight:700; font-size:14px; padding:6px 14px; border-radius:20px; margin-bottom:24px; }
+  .includes { text-align:left; max-width:420px; margin:24px auto 30px; }
+  .includes li { list-style:none; padding:9px 0 9px 30px; position:relative; color:var(--ink); font-size:15px; border-bottom:1px solid var(--line); }
+  .includes li:before { content:"✓"; position:absolute; left:0; color:var(--good); font-weight:900; }
+
+  /* ---- Pillars ---- */
+  .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .pillar { background:var(--bg-2); border:1px solid var(--line); border-radius:12px; padding:28px 24px; }
+  .pillar .pnum { color:var(--accent-2); font-weight:900; font-size:13px; letter-spacing:.16em; margin-bottom:12px; }
+  .pillar h3 { font-size:20px; font-weight:800; margin-bottom:10px; }
+  .pillar p { color:var(--ink-dim); font-size:15px; }
+
+  /* ---- Proof strip ---- */
+  .proof { display:flex; justify-content:center; gap:48px; flex-wrap:wrap; margin-bottom:36px; }
+  .proof-stat { text-align:center; }
+  .proof-num { font-size:44px; font-weight:900; color:var(--accent-2); line-height:1; }
+  .proof-lbl { font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-dim); margin-top:8px; }
+  .quote { max-width:680px; margin:0 auto; text-align:center; font-size:19px; font-style:italic; color:var(--ink); }
+  .quote-by { display:block; margin-top:14px; font-style:normal; font-size:14px; color:var(--ink-dim); font-weight:600; }
+
+  /* ---- Logistics ---- */
+  .logi { display:flex; justify-content:center; gap:0; flex-wrap:wrap; border:1px solid var(--line); border-radius:12px; overflow:hidden; max-width:760px; margin:0 auto; }
+  .logi div { flex:1; min-width:170px; padding:24px; text-align:center; border-right:1px solid var(--line); }
+  .logi div:last-child { border-right:none; }
+  .logi .lt { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:8px; }
+  .logi .lv { font-size:18px; font-weight:800; }
+
+  /* ---- CTA section ---- */
+  .cta-final { text-align:center; background:var(--bg-2); }
+
+  /* ---- FAQ ---- */
+  .faq { max-width:720px; margin:0 auto; }
+  .faq-item { border-bottom:1px solid var(--line); padding:22px 0; }
+  .faq-q { font-weight:800; font-size:17px; margin-bottom:8px; }
+  .faq-a { color:var(--ink-dim); font-size:15px; }
+
+  /* ---- Footer ---- */
+  footer { text-align:center; padding:44px 0; color:var(--ink-dim); font-size:13px; }
+  footer .fnote { margin-top:8px; }
+
+  /* ---- Expired state ---- */
+  #expired { display:none; min-height:100vh; align-items:center; justify-content:center; text-align:center; padding:40px; }
+  #expired .eyebrow { margin-bottom:18px; }
+  #expired h1 { font-size:clamp(28px,5vw,46px); font-weight:900; margin-bottom:18px; letter-spacing:-.02em; }
+  #expired p { color:var(--ink-dim); font-size:18px; max-width:480px; margin:0 auto 30px; }
+
+  @media (max-width:760px){
+    .pillars { grid-template-columns:1fr; }
+    .countdown { gap:10px; }
+    .cd-unit { min-width:68px; padding:14px 6px; }
+    .logi div { border-right:none; border-bottom:1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ LIVE OFFER (default view) ============ -->
+<div id="offer">
+
+  <div class="memberbar">SCN Member Pricing · $100 Off Public</div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Welcome to SCN. Here's your member price.</div>
+      <h1>Your ticket to BABs 2026.<br><span class="hl">$100 off public pricing.</span></h1>
+      <p class="sub">Three days. 300 owners. The room that compounds every relationship you'll build as a new SCN member. This price is members-only, and it's good for the next 7 days.</p>
+      <a href="https://go.badassbusinesssummit.com/order-form?coupon=SCNMEMBER" class="btn">Claim My Member Ticket → $497</a>
+      <span class="btn-sub">$497 member pricing · $597 public · Discount applied automatically at checkout</span>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-wrap">
+    <div class="wrap">
+      <div class="countdown-label">Your member pricing window closes in</div>
+      <div class="countdown" id="cd">
+        <div class="cd-unit"><div class="cd-num" id="cd-d">--</div><div class="cd-lbl">Days</div></div>
+        <div class="cd-unit"><div class="cd-num" id="cd-h">--</div><div class="cd-lbl">Hours</div></div>
+        <div class="cd-unit"><div class="cd-num" id="cd-m">--</div><div class="cd-lbl">Mins</div></div>
+        <div class="cd-unit"><div class="cd-num" id="cd-s">--</div><div class="cd-lbl">Secs</div></div>
+      </div>
+      <div class="countdown-foot">When the clock runs out, member pricing closes for good.</div>
+    </div>
+  </div>
+
+  <!-- PRICE -->
+  <section>
+    <div class="wrap">
+      <div class="kicker">Your Member Offer</div>
+      <h2 class="section-title">$100 Off. Members Only.</h2>
+      <div class="price-card">
+        <div class="price-row">
+          <span class="price-old">$597</span>
+          <span class="price-new">$497</span>
+        </div>
+        <span class="price-save">You save $100</span>
+        <ul class="includes">
+          <li>Full summit access — every session, all three days</li>
+          <li>All Visibility, Strategic Partnerships & Habits sessions</li>
+          <li>Workshops, masterminds & panels</li>
+          <li>Exclusive networking + nightly after-hours events</li>
+          <li>Happy hour & karaoke night</li>
+          <li>Badass Business Summit swag bag</li>
+        </ul>
+        <a href="https://go.badassbusinesssummit.com/order-form?coupon=SCNMEMBER" class="btn">Claim My Member Ticket → $497</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section>
+    <div class="wrap">
+      <div class="kicker">What You'll Walk Into</div>
+      <h2 class="section-title">Three Pillars. Real Growth.</h2>
+      <p class="section-intro">Every session plugs into one of these three areas. Nothing on the stage is filler.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pnum">PILLAR 1</div>
+          <h3>Visibility</h3>
+          <p>Get seen, remembered, and talked about. Personal brand, positioning, and content that gets you noticed. Walk out the obvious choice in your market.</p>
+        </div>
+        <div class="pillar">
+          <div class="pnum">PILLAR 2</div>
+          <h3>Strategic Partnerships</h3>
+          <p>Find the people who actually need to be in your world. Referral partners. Collaborators. Walk out with partners, not just contacts.</p>
+        </div>
+        <div class="pillar">
+          <div class="pnum">PILLAR 3</div>
+          <h3>Habits</h3>
+          <p>The system that makes visibility and partnerships pay off. Walk out with a daily action plan you can start the Monday after.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section>
+    <div class="wrap">
+      <div class="kicker">The Room Speaks</div>
+      <h2 class="section-title">Don't Take Our Word. Take Theirs.</h2>
+      <div class="proof" style="margin-top:36px;">
+        <div class="proof-stat"><div class="proof-num">85%</div><div class="proof-lbl">Rated Excellent</div></div>
+        <div class="proof-stat"><div class="proof-num">300</div><div class="proof-lbl">Seats Only</div></div>
+        <div class="proof-stat"><div class="proof-num">7</div><div class="proof-lbl">Years Running</div></div>
+      </div>
+      <p class="quote">"I really walked away with tangible actionable items that I can put into practice right now to make a difference in my business."
+        <span class="quote-by">— Jennifer Rego, 2025 Attendee</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- LOGISTICS -->
+  <section>
+    <div class="wrap">
+      <div class="logi">
+        <div><div class="lt">When</div><div class="lv">Sept 16–18, 2026</div></div>
+        <div><div class="lt">Where</div><div class="lv">Fort Worth, TX</div></div>
+        <div><div class="lt">Capacity</div><div class="lv">300 Seats</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final">
+    <div class="wrap">
+      <h2 class="section-title">Lock In Your Member Pricing.</h2>
+      <p class="section-intro">7-day window from your SCN signup. After that, member pricing is gone for this year.</p>
+      <a href="https://go.badassbusinesssummit.com/order-form?coupon=SCNMEMBER" class="btn">Claim My Member Ticket → $497</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="kicker">Quick Questions</div>
+      <h2 class="section-title">Before You Lock It In.</h2>
+      <div class="faq" style="margin-top:36px;">
+        <div class="faq-item">
+          <div class="faq-q">What if I miss the 7-day window?</div>
+          <div class="faq-a">Member pricing closes. You can still buy at the public price on the main site. We can't extend the member window.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I get a refund?</div>
+          <div class="faq-a">Tickets are non-refundable but fully transferable. Can't make it? We'll help you transfer it to someone who can.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's included in GA?</div>
+          <div class="faq-a">All three days, every session, all breakouts, all networking, after-hours events, and the swag bag. VIP add-ons are available separately at full price.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      Badass Business Summit · September 16–18, 2026 · Fort Worth, TX
+      <div class="fnote">© 2026 Success Champions Networking. SCN Member Pricing.</div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ============ EXPIRED STATE ============ -->
+<div id="expired">
+  <div class="wrap">
+    <div class="eyebrow">Member Pricing Window Closed</div>
+    <h1>The 7-day SCN member window has closed.</h1>
+    <p>If you still want to come to BABs 2026, the public ticket page is open.</p>
+    <a href="https://badassbusinesssummit.com/#pricing" class="btn">See Public Pricing →</a>
+  </div>
+</div>
+
+<script>
+/*
+  COUNTDOWN LOGIC
+  ---------------
+  The member's personal expiry is passed as a URL parameter from the email CTA:
+     ...member-upsell?expires=2026-06-08T14:30:00Z
+  In GHL, the email link merges the contact's custom field:
+     ...member-upsell?expires={{contact.member_upsell_expires_at}}
+
+  If no ?expires param is present, we fall back to 7 days from first visit
+  (stored in localStorage) so a direct visitor still sees a live, sensible clock.
+  When the clock hits zero, the offer view is hidden and the expired view is shown.
+*/
+(function () {
+  function getExpiry() {
+    var params = new URLSearchParams(window.location.search);
+    var raw = params.get('expires');
+    if (raw) {
+      // Accept ISO date or unix-seconds
+      var t = isNaN(raw) ? Date.parse(raw) : parseInt(raw, 10) * 1000;
+      if (!isNaN(t)) return t;
+    }
+    // Fallback: 7 days from first visit
+    var key = 'babs_member_upsell_expiry';
+    var stored = localStorage.getItem(key);
+    if (stored) return parseInt(stored, 10);
+    var future = Date.now() + 7 * 24 * 60 * 60 * 1000;
+    localStorage.setItem(key, future);
+    return future;
+  }
+
+  var expiry = getExpiry();
+  var offer = document.getElementById('offer');
+  var expired = document.getElementById('expired');
+
+  function showExpired() {
+    offer.style.display = 'none';
+    expired.style.display = 'flex';
+  }
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function tick() {
+    var diff = expiry - Date.now();
+    if (diff <= 0) { showExpired(); return; }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = d;
+    document.getElementById('cd-h').textContent = pad(h);
+    document.getElementById('cd-m').textContent = pad(m);
+    document.getElementById('cd-s').textContent = pad(s);
+  }
+
+  if (expiry - Date.now() <= 0) {
+    showExpired();
+  } else {
+    tick();
+    setInterval(tick, 1000);
+  }
+})();
+</script>
+
+</body>
+</html>
