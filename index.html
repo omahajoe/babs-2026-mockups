@@ -166,10 +166,14 @@
     position: absolute; inset: 0;
     background: url('images/hero-bg.jpg') center center / cover no-repeat;
     opacity: 0.35;
-    transform: scale(1.05);
-    transition: transform 8s ease-out;
+    transform: scale(1);
+    animation: heroIntroZoom 1.8s ease-out;
+    will-change: transform;
   }
-  .hero.loaded .hero-bg { transform: scale(1); }
+  @keyframes heroIntroZoom {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1); }
+  }
   .hero::after {
     content: '';
     position: absolute; inset: 0;
@@ -1147,7 +1151,8 @@
     <a href="#code">The Code</a>
     <a href="#proof">Proof</a>
     <a href="#pricing">Tickets</a>
-    <a href="sponsors.html">Sponsors</a>
+    <!-- HOLD: Sponsors page not live yet (Joe — deploy tomorrow). Re-enable when sponsors.html ships. -->
+    <!-- <a href="sponsors.html">Sponsors</a> -->
     <a href="venue.html">Venue</a>
     <a class="nav-cta" href="#pricing">Get Your Ticket</a>
   </div>
@@ -1273,7 +1278,7 @@
 <div class="photo-break">
   <div class="photo-break-item" role="img" aria-label="Attendees celebrating with a high-five at the Badass Business Summit" style="background-image:url('images/audience1.jpg')"></div>
   <div class="photo-break-item" role="img" aria-label="Roundtable of attendees engaged in discussion at the Badass Business Summit" style="background-image:url('images/audience2.jpg')"></div>
-  <div class="photo-break-item" role="img" aria-label="Attendees networking between sessions at the Badass Business Summit" style="background-image:url('images/audience3.jpg')"></div>
+  <div class="photo-break-item" role="img" aria-label="Speaker addressing attendees from the stage at the Badass Business Summit" style="background-image:url('images/audience3.jpg')"></div>
 </div>
 
 <!-- WHO THIS IS FOR -->
@@ -1495,7 +1500,7 @@
     <div class="pricing-grid">
       <div class="price-card reveal">
         <div class="price-tier">General Admission</div>
-        <div class="price-amount">$597</div>
+        <div class="price-amount">$797</div>
         <div class="price-term">3-Day Full Access</div>
         <ul class="price-features">
           <li>Full summit access — every session, every day</li>
@@ -1511,9 +1516,9 @@
 
       <div class="price-card featured reveal reveal-delay-1">
         <!-- WEEKLY UPDATE: edit the number below. When it hits 0, change "Only X VIP Seats Left" to "VIP Sold Out" and add the class "sold-out" to the div. -->
-        <div class="seats-badge">Only 17 VIP Seats Left</div>
+        <div class="seats-badge">Only 6 VIP Seats Left</div>
         <div class="price-tier">VIP Admission</div>
-        <div class="price-amount">$1,097</div>
+        <div class="price-amount">$1,297</div>
         <div class="price-term">The Inner Circle</div>
         <ul class="price-features">
           <li>Everything in General Admission, plus…</li>
@@ -1580,7 +1585,8 @@
     <a href="https://badassbusinesssummit.com/" target="_blank" rel="noopener">Home</a>
     <a href="https://badassbusinesssummit.com/badass-bussiness-summit-event-schedule/" target="_blank" rel="noopener">Schedule</a>
     <a href="#speakers">Speakers</a>
-    <a href="sponsors.html">Sponsors</a>
+    <!-- HOLD: Sponsors page not live yet (Joe — deploy tomorrow). Re-enable when sponsors.html ships. -->
+    <!-- <a href="sponsors.html">Sponsors</a> -->
     <a href="venue.html">Venue</a>
     <a href="https://badassbusinesssummit.com/contact-us/" target="_blank" rel="noopener">Contact</a>
     <a href="https://go.badassbusinesssummit.com/order-form" target="_blank" rel="noopener">Buy Ticket</a>
@@ -1598,16 +1604,19 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Hero parallax & load animation
-window.addEventListener('load', () => {
-  document.querySelector('.hero').classList.add('loaded');
-});
+// Hero parallax — smooth, rAF-throttled, tracks scroll instantly (no transition lag)
+const heroBg = document.querySelector('.hero-bg');
+let heroTicking = false;
 window.addEventListener('scroll', () => {
-  const hero = document.querySelector('.hero-bg');
-  if (hero) {
+  if (!heroBg || heroTicking) return;
+  heroTicking = true;
+  requestAnimationFrame(() => {
     const scroll = window.scrollY;
-    hero.style.transform = `scale(1) translateY(${scroll * 0.3}px)`;
-  }
+    if (scroll <= window.innerHeight) {
+      heroBg.style.transform = `scale(1) translateY(${scroll * 0.3}px)`;
+    }
+    heroTicking = false;
+  });
 });
 
 // Nav scroll effect
